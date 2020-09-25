@@ -1,9 +1,10 @@
 # SUMO installation
-Original SUMO has an OK guidance for installation of the simulator, here we are going to mention some tips to resolve installation problems and verify your installation.
+Original SUMO has an OK guidance for installation of the simulator, here we are going to mention some tips to resolve installation problems and verify your installation. 
 
 Depending on you operation system follow the [original installation page](https://sumo.dlr.de/docs/Downloads.php) and try to install SUMO.
 
 # Windows
+Make sure you have some basic understanding of the Windows command prompt. You can find a good introduction [here](https://www.youtube.com/watch?v=MBBWVgE0ewk).
 
 ## Verify your installation
 If you used previous step to install SUMO please restart the command prompt (close and open new) in order to allow new [environmental varable](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_environment_variables?view=powershell-7) called `SUMO_HOME`. This variable defines a path to the folder where all SUMO program executable files are, without it you would always need to specify where your SUMO tools are.

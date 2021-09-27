@@ -1,0 +1,2 @@
+python $SUMO_HOME/tools/randomTrips.py -n straight.net.xml -o periodic.trips.xml --prefix=p -e 1000 -p 5 --trip-attributes="departLane=\"0\"" /
+python $SUMO_HOME/tools/randomTrips.py -n straight.net.xml -o binomial.trips.xml --prefix=b -e 1000 -p 5 --binomial 3 --trip-attributes="departLane=\"1\""

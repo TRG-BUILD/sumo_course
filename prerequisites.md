@@ -1,10 +1,10 @@
 # Prerequisites for the SUMO course
 
-Microsimulation part of the _Trafikteknik_ course relies of a couple of prerequisite computer skills and programs. Contact msam@build.aau.dk if you tried but didnt succeed with any of the points below, and you dont know why.
+Microsimulation part of the _Trafikteknik_ course relies of a couple of prerequisite computer skills and programs. Contact msam@build.aau.dk if you tried but didnt succeed with any of the points below, and you dont know why. 
 
+NB! Please dont install anything on Google Drive or One Drive as it will likely lead to problems with SUMO or Python due to file syncronization that will be difficult to find. 
 
-
-## 1. Command prompt / terminal [](#){name=terminal}
+## 1. Command prompt / terminal
 Make sure you have some basic understanding of the Windows command prompt or macOS terminal as it will be used throughout the course. If you are not sure what command prompt and terminal are you can find a good introduction for your OS here:
 
 - [Windows](https://www.youtube.com/watch?v=MBBWVgE0ewk)
@@ -19,9 +19,9 @@ Throughout the course we will be working a lot with a text editor that will let 
 If you dont have a preference i recommend [VSCode](https://code.visualstudio.com/) since it is lightweight and supports syntax highlighting for all computer languages / formats and will mark syntax errors for you. VSCode also includes a terminal. Additionally, when we will automate SUMO we can use VSCode to view and write some python code. All in all, from preparing / organizing files, to simulation and automation all can be done from one text editor.
 
 ## 4. SUMO installation
-Now to the main tool of the lectures. Original SUMO has an OK guidance for installation of the simulator for Windows, macOS and Linux, here we are going to mention some tips to resolve installation problems and verify your installation. Depending on you operation system follow the [original installation page](https://sumo.dlr.de/docs/Downloads.php) and try to install SUMO.
+Now to the main tool of the lectures. Original SUMO has an OK guidance for installation of the simulator for Windows, macOS and Linux, here we are going to mention some tips to resolve installation problems and verify your installation. Depending on you operation system follow the [original installation page](https://sumo.dlr.de/docs/Downloads.php) and try to install SUMO. NB! 
 
-## 5. Verify your installation
+## 5. Verify your SUMO installation
 If everything went smoothly in point 4 we need to verify that we actually got SUMO on our machine. If you used command prompt (Windows) or terminal (macOS) in the previous step to install SUMO please reset it by closing and opening it again in order to allow a new [environmental varable](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_environment_variables?view=powershell-7) called `SUMO_HOME` to be registered. This variable defines a path to the folder on your machine where all SUMO program executable files and helper tools are, without it you would always need to specify where your SUMO tools are explicitly.
 
 After you have restarted the command prompt / terminal type follwing to verify that the environmental variable exists:
@@ -74,3 +74,16 @@ msiexec.exe -i sumo-win64-1.7.0.msi
 Verify your installation as described in the previous section.
 
 ## 6. Python
+Since SUMO is not really a 1 program but a collection of tools, many of those tools are small Python programs that we can ran to, for example, generate a road network from template, generate random pedestrian demands, get a map from OSM, etc. 
+
+To check if you have python already write the following command to a terminal or command prompt depending on your OS:
+
+```sh
+python --version
+```
+
+If you dont already have Python download and install latest version from the official website:
+- [For macOS](https://www.python.org/downloads/macos/)
+- [For Windows](https://www.python.org/downloads/windows/)
+
+Repeat the check above to verify your installation. If you're having problems, ask your classmates that have had Python at _Vej- og trafikdatabehandling (VTT6)_ or send me an email.

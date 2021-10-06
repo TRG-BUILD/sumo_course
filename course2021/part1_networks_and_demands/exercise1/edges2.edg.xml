@@ -1,0 +1,17 @@
+<edges>
+    <edge from="E1" to="E2" id="EE" type="1L13.3"/>
+    <edge from="W1" to="W2" id="WW" type="1L13.3"/>
+    <edge from="N1" to="N2" id="NN" type="1L13.3"/>
+    <edge from="S1" to="S2" id="SS" type="1L13.3"/>
+    
+
+    <edge from="E2" to="C" id="EC" type="2L13.3"/>
+    <edge from="W2" to="C" id="WC" type="2L13.3"/>
+    <edge from="N2" to="C" id="NC" type="2L13.3"/>
+    <edge from="S2" to="C" id="SC" type="2L13.3"/>
+
+    <edge from="C" to="E1" id="CE" type="1L13.3"/>
+    <edge from="C" to="W1" id="CW" type="1L13.3"/>
+    <edge from="C" to="N1" id="CN" type="1L13.3"/>
+    <edge from="C" to="S1" id="CS" type="1L13.3"/>
+</edges>

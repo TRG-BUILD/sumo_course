@@ -1,0 +1,4 @@
+<types>
+    <type id="1L13.3" numLanes="1" speed="13.3" sidewalkWidth="2.00"/>
+    <type id="2L13.3" numLanes="2" speed="13.3" sidewalkWidth="2.00"/>
+</types>

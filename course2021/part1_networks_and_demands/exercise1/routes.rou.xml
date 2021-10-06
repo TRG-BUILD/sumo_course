@@ -1,0 +1,17 @@
+<routes>
+    <vType id="bus1" maxSpeed="20.00" vClass="bus" color="red"/>
+    <vType id="car1" maxSpeed="50.00" vClass="passenger" color="green"/>
+
+    <route edges="EC CN" color="yellow" id="routeEtoN"/>
+    <route edges="EC CS" color="yellow" id="routeEtoS"/>
+    <route edges="EC CW" color="yellow" id="routeEtoW"/>
+
+    <flow id="c0" type="car1" begin="0.00" route="routeEtoN" end="500.00" number="50"/>
+    <flow id="c1" type="car1" begin="0.00" route="routeEtoW" end="500.00" number="50"/>
+    <flow id="c2" type="car1" begin="0.00" route="routeEtoS" end="500.00" number="50"/>
+
+    <vehicle id="b0" type="bus1" depart="100.00" route="routeEtoN"/>
+    <vehicle id="b1" type="bus1" depart="200.00" route="routeEtoN"/>
+    <vehicle id="b2" type="bus1" depart="300.00" route="routeEtoN"/>
+    <vehicle id="b3" type="bus1" depart="400.00" route="routeEtoN"/>
+</routes>

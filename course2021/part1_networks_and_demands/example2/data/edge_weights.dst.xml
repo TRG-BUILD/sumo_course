@@ -1,0 +1,12 @@
+<edgedata>
+    <interval id="dst" begin="0" end="3600">
+        <edge id="AX1" value="100.00"/>
+        <edge id="AX2" value="100.00"/>
+        <edge id="A23" value="100.00"/>
+        <edge id="A10" value="100.00"/>
+        <edge id="C23" value="100.00"/>
+        <edge id="C10" value="100.00"/>
+        <edge id="CY1" value="100.00"/>
+        <edge id="CY2" value="100.00"/>
+    </interval>
+</edgedata>

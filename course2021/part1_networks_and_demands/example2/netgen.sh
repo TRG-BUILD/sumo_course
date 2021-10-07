@@ -1,0 +1,1 @@
+netconvert -n data/block.nod.xml -e data/block.edg.xml -o data/block.net.xml --no-turnarounds --crossings.guess

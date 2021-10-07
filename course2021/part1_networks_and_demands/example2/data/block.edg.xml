@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<edges version="0.13" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/edges_file.xsd">
+    <edge id="XA1" from="X1" to="A1" priority="1" numLanes="3" speed="13.89">
+        <lane index="0" allow="pedestrian" width="2.00"/>
+        <lane index="1" disallow="pedestrian" width="4.00" endOffset="5.00"/>
+        <lane index="2" disallow="pedestrian" width="4.00" endOffset="5.00"/>
+    </edge>
+    <edge id="AB1" from="A1" to="B1" priority="1" numLanes="3" speed="13.89">
+        <lane index="0" allow="pedestrian" width="2.00"/>
+        <lane index="1" disallow="pedestrian" width="4.00" endOffset="5.00"/>
+        <lane index="2" disallow="pedestrian" width="4.00" endOffset="5.00"/>
+    </edge>
+    <edge id="BC1" from="B1" to="C1" priority="1" numLanes="3" speed="13.89">
+        <lane index="0" allow="pedestrian" width="2.00"/>
+        <lane index="1" disallow="pedestrian" width="4.00" endOffset="5.00"/>
+        <lane index="2" disallow="pedestrian" width="4.00" endOffset="5.00"/>
+    </edge>
+    <edge id="CY1" from="C1" to="Y1" priority="1" numLanes="3" speed="13.89">
+        <lane index="0" allow="pedestrian" width="2.00"/>
+        <lane index="1" disallow="pedestrian" width="4.00" endOffset="5.00"/>
+        <lane index="2" disallow="pedestrian" width="4.00" endOffset="5.00"/>
+    </edge>
+    <edge id="YC1" from="Y1" to="C1" priority="1" numLanes="3" speed="13.89">
+        <lane index="0" allow="pedestrian" width="2.00"/>
+        <lane index="1" disallow="pedestrian" width="4.00" endOffset="5.00"/>
+        <lane index="2" disallow="pedestrian" width="4.00" endOffset="5.00"/>
+    </edge>
+    <edge id="CB1" from="C1" to="B1" priority="1" numLanes="3" speed="13.89">
+        <lane index="0" allow="pedestrian" width="2.00"/>
+        <lane index="1" disallow="pedestrian" width="4.00" endOffset="5.00"/>
+        <lane index="2" disallow="pedestrian" width="4.00" endOffset="5.00"/>
+    </edge>
+    <edge id="BA1" from="B1" to="A1" priority="1" numLanes="3" speed="13.89">
+        <lane index="0" allow="pedestrian" width="2.00"/>
+        <lane index="1" disallow="pedestrian" width="4.00" endOffset="5.00"/>
+        <lane index="2" disallow="pedestrian" width="4.00" endOffset="5.00"/>
+    </edge>
+    <edge id="AX1" from="A1" to="X1" priority="1" numLanes="3" speed="13.89">   
+        <lane index="0" allow="pedestrian" width="2.00"/>
+        <lane index="1" disallow="pedestrian" width="4.00" endOffset="5.00"/>
+        <lane index="2" disallow="pedestrian" width="4.00" endOffset="5.00"/>
+    </edge>
+    
+    <edge id="XA2" from="X2" to="A2" priority="1" numLanes="3" speed="13.89">
+        <lane index="0" allow="pedestrian" width="2.00"/>
+        <lane index="1" disallow="pedestrian" width="4.00" endOffset="5.00"/>
+        <lane index="2" disallow="pedestrian" width="4.00" endOffset="5.00"/>
+    </edge>
+    <edge id="AB2" from="A2" to="B2" priority="1" numLanes="3" speed="13.89">
+        <lane index="0" allow="pedestrian" width="2.00"/>
+        <lane index="1" disallow="pedestrian" width="4.00" endOffset="5.00"/>
+        <lane index="2" disallow="pedestrian" width="4.00" endOffset="5.00"/>
+    </edge>
+    <edge id="BC2" from="B2" to="C2" priority="1" numLanes="3" speed="13.89">
+        <lane index="0" allow="pedestrian" width="2.00"/>
+        <lane index="1" disallow="pedestrian" width="4.00" endOffset="5.00"/>
+        <lane index="2" disallow="pedestrian" width="4.00" endOffset="5.00"/>
+    </edge>
+    <edge id="CY2" from="C2" to="Y2" priority="1" numLanes="3" speed="13.89">
+        <lane index="0" allow="pedestrian" width="2.00"/>
+        <lane index="1" disallow="pedestrian" width="4.00" endOffset="5.00"/>
+        <lane index="2" disallow="pedestrian" width="4.00" endOffset="5.00"/>
+    </edge>    
+    <edge id="YC2" from="Y2" to="C2" priority="1" numLanes="3" speed="13.89">
+        <lane index="0" allow="pedestrian" width="2.00"/>
+        <lane index="1" disallow="pedestrian" width="4.00" endOffset="5.00"/>
+        <lane index="2" disallow="pedestrian" width="4.00" endOffset="5.00"/>
+    </edge>    
+    <edge id="CB2" from="C2" to="B2" priority="1" numLanes="3" speed="13.89">
+        <lane index="0" allow="pedestrian" width="2.00"/>
+        <lane index="1" disallow="pedestrian" width="4.00" endOffset="5.00"/>
+        <lane index="2" disallow="pedestrian" width="4.00" endOffset="5.00"/>
+    </edge>    
+    <edge id="BA2" from="B2" to="A2" priority="1" numLanes="3" speed="13.89">
+        <lane index="0" allow="pedestrian" width="2.00"/>
+        <lane index="1" disallow="pedestrian" width="4.00" endOffset="5.00"/>
+        <lane index="2" disallow="pedestrian" width="4.00" endOffset="5.00"/>
+    </edge>    
+    <edge id="AX2" from="A2" to="X2" priority="1" numLanes="3" speed="13.89">
+        <lane index="0" allow="pedestrian" width="2.00"/>
+        <lane index="1" disallow="pedestrian" width="4.00" endOffset="5.00"/>
+        <lane index="2" disallow="pedestrian" width="4.00" endOffset="5.00"/>
+    </edge>  
+
+    <edge id="A01" from="A0" to="A1" priority="1" numLanes="2" speed="13.89">
+        <lane index="0" allow="pedestrian" width="2.00"/>
+        <lane index="1" disallow="pedestrian" width="4.00" endOffset="5.00"/>
+    </edge> 
+    <edge id="A12" from="A1" to="A2" priority="1" numLanes="2" speed="13.89">
+        <lane index="0" allow="pedestrian" width="2.00"/>
+        <lane index="1" disallow="pedestrian" width="4.00" endOffset="5.00"/>
+    </edge> 
+    <edge id="A23" from="A2" to="A3" priority="1" numLanes="2" speed="13.89">
+        <lane index="0" allow="pedestrian" width="2.00"/>
+        <lane index="1" disallow="pedestrian" width="4.00" endOffset="5.00"/>
+    </edge> 
+    <edge id="A32" from="A3" to="A2" priority="1" numLanes="2" speed="13.89">
+        <lane index="0" allow="pedestrian" width="2.00"/>
+        <lane index="1" disallow="pedestrian" width="4.00" endOffset="5.00"/>
+    </edge>     
+    <edge id="A21" from="A2" to="A1" priority="1" numLanes="2" speed="13.89">
+        <lane index="0" allow="pedestrian" width="2.00"/>
+        <lane index="1" disallow="pedestrian" width="4.00" endOffset="5.00"/>
+    </edge>     
+    <edge id="A10" from="A1" to="A0" priority="1" numLanes="2" speed="13.89">
+        <lane index="0" allow="pedestrian" width="2.00"/>
+        <lane index="1" disallow="pedestrian" width="4.00" endOffset="5.00"/>
+    </edge>
+
+    <edge id="B01" from="B0" to="B1" priority="1" numLanes="1" allow="pedestrian" speed="5.00" spreadType="center" width="2.00"/>
+    <edge id="B12" from="B1" to="B2" priority="1" numLanes="1" allow="pedestrian" speed="5.00" spreadType="center" width="2.00"/>
+    <edge id="B13" from="B2" to="B3" priority="1" numLanes="1" allow="pedestrian" speed="5.00" spreadType="center" width="2.00"/>
+
+    <edge id="C01" from="C0" to="C1" priority="1" numLanes="3" speed="13.89">
+        <lane index="0" allow="pedestrian" width="2.00"/>
+        <lane index="1" disallow="pedestrian" width="4.00" endOffset="5.00"/>
+        <lane index="2" disallow="pedestrian" width="4.00" endOffset="5.00"/>
+    </edge> 
+    <edge id="C12" from="C1" to="C2" priority="1" numLanes="3" speed="13.89"> 
+        <lane index="0" allow="pedestrian" width="2.00"/>
+        <lane index="1" disallow="pedestrian" width="4.00" endOffset="5.00"/>
+        <lane index="2" disallow="pedestrian" width="4.00" endOffset="5.00"/>
+    </edge> 
+    <edge id="C23" from="C2" to="C3" priority="1" numLanes="3" speed="13.89">
+        <lane index="0" allow="pedestrian" width="2.00"/>
+        <lane index="1" disallow="pedestrian" width="4.00" endOffset="5.00"/>
+        <lane index="2" disallow="pedestrian" width="4.00" endOffset="5.00"/>
+    </edge>     
+    <edge id="C32" from="C3" to="C2" priority="1" numLanes="3" speed="13.89">
+        <lane index="0" allow="pedestrian" width="2.00"/>
+        <lane index="1" disallow="pedestrian" width="4.00" endOffset="5.00"/>
+        <lane index="2" disallow="pedestrian" width="4.00" endOffset="5.00"/>
+    </edge> 
+    <edge id="C21" from="C2" to="C1" priority="1" numLanes="3" speed="13.89">
+        <lane index="0" allow="pedestrian" width="2.00"/>
+        <lane index="1" disallow="pedestrian" width="4.00" endOffset="5.00"/>
+        <lane index="2" disallow="pedestrian" width="4.00" endOffset="5.00"/>
+    </edge>     
+    <edge id="C10" from="C1" to="C0" priority="1" numLanes="3" speed="13.89">
+        <lane index="0" allow="pedestrian" width="2.00"/>
+        <lane index="1" disallow="pedestrian" width="4.00" endOffset="5.00"/>
+        <lane index="2" disallow="pedestrian" width="4.00" endOffset="5.00"/>
+    </edge> 
+</edges>

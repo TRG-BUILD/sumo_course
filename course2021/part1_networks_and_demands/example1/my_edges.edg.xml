@@ -1,0 +1,6 @@
+<edges>
+    <edge from="0" to="1" id="entry" type="3L33.3"/>
+    <edge from="1" to="2" id="mid" type="3L33.3"/>
+    <edge from="2" to="3" id="exit" type="3L33.3"/>
+</edges>
+

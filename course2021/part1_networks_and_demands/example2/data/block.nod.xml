@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nodes version="0.13" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/nodes_file.xsd">
+    <node id="X1" x="-600.00" y="150" type="unregulated"/>
+    <node id="X2" x="-600.00" y="-150" type="unregulated"/>
+    <node id="A0" x="-300.00" y="450" type="unregulated"/>
+    <node id="A1" x="-300.00" y="150" type="traffic_light"/>
+    <node id="A2" x="-300.00" y="-150" type="traffic_light"/>
+    <node id="A3" x="-300.00" y="-450" type="unregulated"/>
+    <node id="B0" x="0.00" y="450" type="unregulated"/>
+    <node id="B1" x="0.00" y="150" type="traffic_light"/>
+    <node id="B2" x="0.00" y="-150" type="traffic_light"/>
+    <node id="B3" x="0.00" y="-450" type="unregulated"/>
+    <node id="C0" x="300.00" y="450" type="unregulated"/>
+    <node id="C1" x="300.00" y="150" type="traffic_light"/>
+    <node id="C2" x="300.00" y="-150" type="traffic_light"/>
+    <node id="C3" x="300.00" y="-450" type="unregulated"/>
+    <node id="Y1" x="600.00" y="150" type="unregulated"/>
+    <node id="Y2" x="600.00" y="-150" type="unregulated"/>
+</nodes>

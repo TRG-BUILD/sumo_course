@@ -1,0 +1,14 @@
+<configuration>
+    <input>
+        <net-file value="my_net.net.xml" />
+        <route-files value="my_routes.rou.xml" />
+    </input>
+    <output>
+        <fcd-output value="my_fcd.xml" />
+        <emission-output value="my_emission.xml" />
+    </output>
+    <time>
+        <begin value="0" />
+        <end value="5000" />
+    </time>
+</configuration>

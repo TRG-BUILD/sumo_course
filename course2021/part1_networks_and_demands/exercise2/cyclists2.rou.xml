@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on Fri Oct  8 10:53:35 2021 by Eclipse SUMO duarouter Version v1_7_0+1095-7111e26d53
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/duarouterConfiguration.xsd">
+
+    <input>
+        <net-file value="stolpedalsvej2.net.xml"/>
+        <route-files value="cyclists2.rou.xml"/>
+    </input>
+
+    <output>
+        <output-file value="cyclists2.rou.xml.tmp"/>
+        <write-trips value="true"/>
+    </output>
+
+    <time>
+        <begin value="0"/>
+        <end value="200"/>
+    </time>
+
+    <report>
+        <no-warnings value="true"/>
+        <ignore-errors value="true"/>
+        <no-step-log value="true"/>
+    </report>
+
+</configuration>
+-->
+
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+    <vType id="cyc_bicycle" vClass="bicycle"/>
+    <trip id="cyc0" type="cyc_bicycle" depart="0.00" from="N1" to="-C1"/>
+    <trip id="cyc2" type="cyc_bicycle" depart="6.00" from="N4" to="C1"/>
+    <trip id="cyc6" type="cyc_bicycle" depart="18.00" from="-C1" to="-C6"/>
+    <trip id="cyc7" type="cyc_bicycle" depart="21.00" from="N1" to="-S3"/>
+    <trip id="cyc9" type="cyc_bicycle" depart="27.00" from="S1" to="-C1"/>
+    <trip id="cyc12" type="cyc_bicycle" depart="36.00" from="S6" to="-N2"/>
+    <trip id="cyc14" type="cyc_bicycle" depart="42.00" from="S2" to="-S5"/>
+    <trip id="cyc17" type="cyc_bicycle" depart="51.00" from="C10" to="-S4"/>
+    <trip id="cyc18" type="cyc_bicycle" depart="54.00" from="S2" to="-S6"/>
+    <trip id="cyc19" type="cyc_bicycle" depart="57.00" from="S3" to="-S5"/>
+    <trip id="cyc20" type="cyc_bicycle" depart="60.00" from="N3" to="-C10"/>
+    <trip id="cyc21" type="cyc_bicycle" depart="63.00" from="-C8" to="-C9"/>
+    <trip id="cyc22" type="cyc_bicycle" depart="66.00" from="-C3" to="-C7"/>
+    <trip id="cyc23" type="cyc_bicycle" depart="69.00" from="-C4" to="-C9"/>
+    <trip id="cyc24" type="cyc_bicycle" depart="72.00" from="C9" to="-N3"/>
+    <trip id="cyc27" type="cyc_bicycle" depart="81.00" from="N1" to="-S6"/>
+    <trip id="cyc31" type="cyc_bicycle" depart="93.00" from="C7" to="C1"/>
+    <trip id="cyc33" type="cyc_bicycle" depart="99.00" from="-C8" to="-C10"/>
+    <trip id="cyc34" type="cyc_bicycle" depart="102.00" from="-gneE17" to="-C8"/>
+    <trip id="cyc36" type="cyc_bicycle" depart="108.00" from="S3" to="-N1"/>
+    <trip id="cyc37" type="cyc_bicycle" depart="111.00" from="N1" to="-N4"/>
+    <trip id="cyc38" type="cyc_bicycle" depart="114.00" from="S5" to="-S1"/>
+    <trip id="cyc41" type="cyc_bicycle" depart="123.00" from="C8" to="C8"/>
+    <trip id="cyc44" type="cyc_bicycle" depart="132.00" from="-C4" to="-C10"/>
+    <trip id="cyc45" type="cyc_bicycle" depart="135.00" from="-C4" to="-S6"/>
+    <trip id="cyc46" type="cyc_bicycle" depart="138.00" from="S1" to="-N4"/>
+    <trip id="cyc47" type="cyc_bicycle" depart="141.00" from="-C3" to="-N3"/>
+    <trip id="cyc51" type="cyc_bicycle" depart="153.00" from="N2" to="-S3"/>
+    <trip id="cyc53" type="cyc_bicycle" depart="159.00" from="-C4" to="-N5"/>
+    <trip id="cyc55" type="cyc_bicycle" depart="165.00" from="S3" to="-C8"/>
+    <trip id="cyc57" type="cyc_bicycle" depart="171.00" from="S5" to="C7"/>
+    <trip id="cyc60" type="cyc_bicycle" depart="180.00" from="N5" to="-S3"/>
+    <trip id="cyc61" type="cyc_bicycle" depart="183.00" from="N5" to="-S3"/>
+    <trip id="cyc65" type="cyc_bicycle" depart="195.00" from="-gneE17" to="-C10"/>
+</routes>

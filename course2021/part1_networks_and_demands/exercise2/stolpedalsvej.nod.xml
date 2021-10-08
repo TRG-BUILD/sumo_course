@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on Thu Oct  7 20:37:14 2021 by Eclipse SUMO netconvert Version v1_7_0+1095-7111e26d53
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
+
+    <input>
+        <sumo-net-file value="stolpedalsvej.net.xml"/>
+    </input>
+
+    <output>
+        <plain-output-prefix value="stolpedalsvej"/>
+    </output>
+
+    <processing>
+        <geometry.min-radius.fix.railways value="false"/>
+        <geometry.max-grade.fix value="false"/>
+        <offset.disable-normalization value="true"/>
+        <lefthand value="false"/>
+    </processing>
+
+    <junctions>
+        <no-turnarounds value="true"/>
+        <junctions.corner-detail value="5"/>
+        <junctions.limit-turn-speed value="5.5"/>
+        <rectangular-lane-cut value="false"/>
+    </junctions>
+
+    <pedestrian>
+        <walkingareas value="false"/>
+    </pedestrian>
+
+    <report>
+        <aggregate-warnings value="5"/>
+    </report>
+
+</configuration>
+-->
+
+<nodes version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/nodes_file.xsd">
+    <location netOffset="235.04,172.65" convBoundary="0.00,0.00,512.90,326.72" origBoundary="-10000000000.00,-10000000000.00,10000000000.00,10000000000.00" projParameter="!"/>
+
+    <node id="gneJ10" x="509.90" y="123.93" type="priority"/>
+    <node id="gneJ11" x="325.07" y="297.05" type="priority"/>
+    <node id="gneJ13" x="222.48" y="326.72" type="priority"/>
+    <node id="gneJ14" x="92.45" y="201.70" type="priority"/>
+    <node id="gneJ15" x="166.18" y="120.16" type="priority"/>
+    <node id="gneJ16" x="364.62" y="105.89" type="priority"/>
+    <node id="gneJ17" x="392.72" y="203.18" type="priority"/>
+    <node id="gneJ18" x="0.00" y="150.79" type="priority"/>
+    <node id="gneJ19" x="149.15" y="308.36" type="priority"/>
+    <node id="gneJ20" x="490.26" y="215.67" type="priority"/>
+    <node id="gneJ23" x="311.89" y="113.58" type="priority"/>
+    <node id="gneJ25" x="100.33" y="124.67" type="priority"/>
+    <node id="gneJ27" x="334.54" y="0.00" type="priority"/>
+    <node id="gneJ28" x="414.94" y="291.26" type="priority"/>
+    <node id="gneJ29" x="429.05" y="141.35" type="priority"/>
+    <node id="gneJ30" x="326.86" y="161.76" type="priority"/>
+    <node id="gneJ31" x="119.43" y="196.66" type="priority"/>
+    <node id="gneJ4" x="65.46" y="220.50" type="priority" radius="8.00"/>
+    <node id="gneJ5" x="80.20" y="208.38" type="priority"/>
+    <node id="gneJ6" x="184.77" y="186.19" type="priority"/>
+    <node id="gneJ7" x="289.35" y="168.43" type="priority" radius="8.00"/>
+    <node id="gneJ8" x="380.00" y="152.80" type="priority"/>
+    <node id="gneJ9" x="468.50" y="133.55" type="priority" radius="10.00"/>
+</nodes>

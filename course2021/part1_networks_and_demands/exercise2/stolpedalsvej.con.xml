@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on Thu Oct  7 20:37:14 2021 by Eclipse SUMO netconvert Version v1_7_0+1095-7111e26d53
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
+
+    <input>
+        <sumo-net-file value="stolpedalsvej.net.xml"/>
+    </input>
+
+    <output>
+        <plain-output-prefix value="stolpedalsvej"/>
+    </output>
+
+    <processing>
+        <geometry.min-radius.fix.railways value="false"/>
+        <geometry.max-grade.fix value="false"/>
+        <offset.disable-normalization value="true"/>
+        <lefthand value="false"/>
+    </processing>
+
+    <junctions>
+        <no-turnarounds value="true"/>
+        <junctions.corner-detail value="5"/>
+        <junctions.limit-turn-speed value="5.5"/>
+        <rectangular-lane-cut value="false"/>
+    </junctions>
+
+    <pedestrian>
+        <walkingareas value="false"/>
+    </pedestrian>
+
+    <report>
+        <aggregate-warnings value="5"/>
+    </report>
+
+</configuration>
+-->
+
+<connections version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/connections_file.xsd">
+    <connection from="-C1" to="-C2" fromLane="0" toLane="0"/>
+
+    <connection from="-C10" to="C10" fromLane="0" toLane="0"/>
+
+    <connection from="-C2" to="-C3" fromLane="0" toLane="0"/>
+
+    <connection from="-C3" to="-S2" fromLane="0" toLane="0"/>
+    <connection from="-C3" to="-C4" fromLane="0" toLane="0"/>
+    <connection from="-C3" to="C3" fromLane="0" toLane="0"/>
+
+    <connection from="-C4" to="-S3" fromLane="0" toLane="0"/>
+    <connection from="-C4" to="-C5" fromLane="0" toLane="0"/>
+    <connection from="-C4" to="-N2" fromLane="0" toLane="0"/>
+    <connection from="-C4" to="C4" fromLane="0" toLane="0"/>
+
+    <connection from="-C5" to="-C6" fromLane="0" toLane="0"/>
+    <connection from="-C5" to="-N3" fromLane="0" toLane="0"/>
+    <connection from="-C5" to="C5" fromLane="0" toLane="0"/>
+
+    <connection from="-C6" to="-S4" fromLane="0" toLane="0"/>
+    <connection from="-C6" to="-C7" fromLane="0" toLane="0"/>
+    <connection from="-C6" to="C6" fromLane="0" toLane="0"/>
+
+    <connection from="-C7" to="-S6" fromLane="0" toLane="0"/>
+    <connection from="-C7" to="-C8" fromLane="0" toLane="0"/>
+    <connection from="-C7" to="gneE17" fromLane="0" toLane="0"/>
+    <connection from="-C7" to="C7" fromLane="0" toLane="0"/>
+
+    <connection from="-C8" to="-C9" fromLane="0" toLane="0"/>
+    <connection from="-C8" to="-C9" fromLane="0" toLane="1"/>
+
+    <connection from="-C9" to="-C10" fromLane="0" toLane="0"/>
+    <connection from="-C9" to="-N5" fromLane="1" toLane="0"/>
+    <connection from="-C9" to="C9" fromLane="1" toLane="0"/>
+
+    <connection from="-N1" to="N1" fromLane="0" toLane="0"/>
+
+    <connection from="-N2" to="N2" fromLane="0" toLane="0"/>
+
+    <connection from="-N3" to="N3" fromLane="0" toLane="0"/>
+
+    <connection from="-N4" to="N4" fromLane="0" toLane="0"/>
+
+    <connection from="-N5" to="N5" fromLane="0" toLane="0"/>
+
+    <connection from="-S1" to="S1" fromLane="0" toLane="0"/>
+
+    <connection from="-S2" to="S2" fromLane="0" toLane="0"/>
+
+    <connection from="-S3" to="S3" fromLane="0" toLane="0"/>
+
+    <connection from="-S4" to="S4" fromLane="0" toLane="0"/>
+
+    <connection from="-S5" to="S5" fromLane="0" toLane="0"/>
+
+    <connection from="-S6" to="-S5" fromLane="0" toLane="0"/>
+
+    <connection from="-gneE17" to="C7" fromLane="0" toLane="0"/>
+    <connection from="-gneE17" to="-S6" fromLane="0" toLane="0"/>
+    <connection from="-gneE17" to="-C8" fromLane="1" toLane="0"/>
+    <connection from="-gneE17" to="gneE17" fromLane="1" toLane="0"/>
+
+    <connection from="C1" to="-N1" fromLane="0" toLane="0"/>
+    <connection from="C1" to="-S1" fromLane="0" toLane="0"/>
+    <connection from="C1" to="-C1" fromLane="0" toLane="0"/>
+
+    <connection from="C10" to="-N5" fromLane="0" toLane="0"/>
+    <connection from="C10" to="C9" fromLane="0" toLane="0"/>
+    <connection from="C10" to="-C10" fromLane="0" toLane="0"/>
+
+    <connection from="C2" to="C1" fromLane="0" toLane="0"/>
+
+    <connection from="C3" to="C2" fromLane="0" toLane="0"/>
+
+    <connection from="C4" to="C3" fromLane="0" toLane="0"/>
+    <connection from="C4" to="-S2" fromLane="0" toLane="0"/>
+    <connection from="C4" to="-C4" fromLane="0" toLane="0"/>
+
+    <connection from="C5" to="-N2" fromLane="0" toLane="0"/>
+    <connection from="C5" to="C4" fromLane="0" toLane="0"/>
+    <connection from="C5" to="-S3" fromLane="0" toLane="0"/>
+    <connection from="C5" to="-C5" fromLane="0" toLane="0"/>
+
+    <connection from="C6" to="-N3" fromLane="0" toLane="0"/>
+    <connection from="C6" to="C5" fromLane="0" toLane="0"/>
+    <connection from="C6" to="-C6" fromLane="0" toLane="0"/>
+
+    <connection from="C7" to="C6" fromLane="0" toLane="0"/>
+    <connection from="C7" to="-S4" fromLane="0" toLane="0"/>
+    <connection from="C7" to="-C7" fromLane="0" toLane="0"/>
+
+    <connection from="C8" to="gneE17" fromLane="0" toLane="0"/>
+    <connection from="C8" to="C7" fromLane="0" toLane="0"/>
+    <connection from="C8" to="-S6" fromLane="0" toLane="0"/>
+    <connection from="C8" to="-C8" fromLane="0" toLane="0"/>
+
+    <connection from="C9" to="C8" fromLane="0" toLane="0"/>
+
+    <connection from="N1" to="-S1" fromLane="0" toLane="0"/>
+    <connection from="N1" to="-C1" fromLane="0" toLane="0"/>
+    <connection from="N1" to="-N1" fromLane="0" toLane="0"/>
+
+    <connection from="N2" to="C4" fromLane="0" toLane="0"/>
+    <connection from="N2" to="-S3" fromLane="0" toLane="0"/>
+    <connection from="N2" to="-C5" fromLane="0" toLane="0"/>
+    <connection from="N2" to="-N2" fromLane="0" toLane="0"/>
+
+    <connection from="N3" to="C5" fromLane="0" toLane="0"/>
+    <connection from="N3" to="-C6" fromLane="0" toLane="0"/>
+    <connection from="N3" to="-N3" fromLane="0" toLane="0"/>
+
+    <connection from="N4" to="-gneE17" fromLane="0" toLane="0"/>
+    <connection from="N4" to="-gneE17" fromLane="0" toLane="1"/>
+
+    <connection from="N5" to="C9" fromLane="0" toLane="0"/>
+    <connection from="N5" to="-C10" fromLane="0" toLane="0"/>
+    <connection from="N5" to="-N5" fromLane="0" toLane="0"/>
+
+    <connection from="S1" to="-C1" fromLane="0" toLane="0"/>
+    <connection from="S1" to="-N1" fromLane="0" toLane="0"/>
+    <connection from="S1" to="-S1" fromLane="0" toLane="0"/>
+
+    <connection from="S2" to="-C4" fromLane="0" toLane="0"/>
+    <connection from="S2" to="C3" fromLane="0" toLane="0"/>
+    <connection from="S2" to="-S2" fromLane="0" toLane="0"/>
+
+    <connection from="S3" to="-C5" fromLane="0" toLane="0"/>
+    <connection from="S3" to="-N2" fromLane="0" toLane="0"/>
+    <connection from="S3" to="C4" fromLane="0" toLane="0"/>
+    <connection from="S3" to="-S3" fromLane="0" toLane="0"/>
+
+    <connection from="S4" to="-C7" fromLane="0" toLane="0"/>
+    <connection from="S4" to="C6" fromLane="0" toLane="0"/>
+    <connection from="S4" to="-S4" fromLane="0" toLane="0"/>
+
+    <connection from="S5" to="S6" fromLane="0" toLane="0"/>
+    <connection from="S5" to="S6" fromLane="0" toLane="1"/>
+
+    <connection from="S6" to="-C8" fromLane="0" toLane="0"/>
+    <connection from="S6" to="gneE17" fromLane="0" toLane="0"/>
+    <connection from="S6" to="C7" fromLane="1" toLane="0"/>
+    <connection from="S6" to="-S6" fromLane="1" toLane="0"/>
+
+    <connection from="gneE17" to="-N4" fromLane="0" toLane="0"/>
+
+</connections>

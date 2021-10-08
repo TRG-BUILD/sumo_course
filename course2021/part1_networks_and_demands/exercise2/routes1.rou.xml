@@ -1,0 +1,11 @@
+<routes>
+    <vType id="bus1" maxSpeed="20.00" vClass="bus" color="red"/>
+    <vType id="car1" maxSpeed="50.00" vClass="passenger" color="green"/>
+
+    <flow id="c0" type="car1" begin="0.00" from="S1" to="-N4" end="200.00" number="50"/>
+
+    <trip id="b0" type="bus1" depart="50.00" from="C10" to="-N1"/>
+    <trip id="b1" type="bus1" depart="100.00" from="C10" to="-N1"/>
+    <trip id="b2" type="bus1" depart="150.00" from="C10" to="-N1"/>
+    <trip id="b3" type="bus1" depart="200.00" from="C10" to="-N1"/>
+</routes>

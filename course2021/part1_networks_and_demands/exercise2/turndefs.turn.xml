@@ -1,0 +1,79 @@
+<turns xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/turns_file.xsd">
+    <interval begin="0" end="3600">
+        <edgeRelation from="-gneE10" to="-gneE9" probability="100"/>
+        <edgeRelation from="-gneE12" to="gneE13" probability="33.33333333"/>
+        <edgeRelation from="-gneE12" to="gneE33" probability="33.33333333"/>
+        <edgeRelation from="-gneE12" to="gneE8" probability="33.33333333"/>
+        <edgeRelation from="-gneE13" to="gneE12" probability="33.33333333"/>
+        <edgeRelation from="-gneE13" to="gneE33" probability="33.33333333"/>
+        <edgeRelation from="-gneE13" to="gneE8" probability="33.33333333"/>
+        <edgeRelation from="-gneE16" to="-gneE31" probability="50"/>
+        <edgeRelation from="-gneE16" to="gneE17" probability="25"/>
+        <edgeRelation from="-gneE16" to="gneE27" probability="25"/>
+        <edgeRelation from="-gneE17" to="-gneE31" probability="25"/>
+        <edgeRelation from="-gneE17" to="gneE16" probability="25"/>
+        <edgeRelation from="-gneE17" to="gneE27" probability="50"/>
+        <edgeRelation from="-gneE18" to="gneE19" probability="50"/>
+        <edgeRelation from="-gneE18" to="gneE9" probability="50"/>
+        <edgeRelation from="-gneE19" to="gneE18" probability="50"/>
+        <edgeRelation from="-gneE19" to="gneE9" probability="50"/>
+        <edgeRelation from="-gneE20" to="-gneE13" probability="50"/>
+        <edgeRelation from="-gneE20" to="gneE30" probability="50"/>
+        <edgeRelation from="-gneE21" to="-gneE28" probability="50"/>
+        <edgeRelation from="-gneE21" to="gneE22" probability="50"/>
+        <edgeRelation from="-gneE22" to="-gneE28" probability="50"/>
+        <edgeRelation from="-gneE22" to="gneE21" probability="50"/>
+        <edgeRelation from="-gneE25" to="-gneE16" probability="100"/>
+        <edgeRelation from="-gneE26" to="-gneE17" probability="100"/>
+        <edgeRelation from="-gneE27" to="-gneE31" probability="33.33333333"/>
+        <edgeRelation from="-gneE27" to="gneE16" probability="33.33333333"/>
+        <edgeRelation from="-gneE27" to="gneE17" probability="33.33333333"/>
+        <edgeRelation from="-gneE28" to="-gneE27" probability="100"/>
+        <edgeRelation from="-gneE29" probability="100"/>
+        <edgeRelation from="-gneE30" to="-gneE13" probability="50"/>
+        <edgeRelation from="-gneE30" to="gneE20" probability="50"/>
+        <edgeRelation from="-gneE31" to="-gneE29" probability="50"/>
+        <edgeRelation from="-gneE31" to="-gneE30" probability="50"/>
+        <edgeRelation from="-gneE32" to="-gneE10" probability="100"/>
+        <edgeRelation from="-gneE33" to="gneE12" probability="33.33333333"/>
+        <edgeRelation from="-gneE33" to="gneE13" probability="33.33333333"/>
+        <edgeRelation from="-gneE33" to="gneE8" probability="33.33333333"/>
+        <edgeRelation from="-gneE34" probability="100"/>
+        <edgeRelation from="-gneE8" to="gneE12" probability="33.33333333"/>
+        <edgeRelation from="-gneE8" to="gneE13" probability="33.33333333"/>
+        <edgeRelation from="-gneE8" to="gneE33" probability="33.33333333"/>
+        <edgeRelation from="-gneE9" to="gneE18" probability="50"/>
+        <edgeRelation from="-gneE9" to="gneE19" probability="50"/>
+        <edgeRelation from="gneE10" to="gneE32" probability="100"/>
+        <edgeRelation from="gneE12" probability="100"/>
+        <edgeRelation from="gneE13" to="gneE20" probability="50"/>
+        <edgeRelation from="gneE13" to="gneE30" probability="50"/>
+        <edgeRelation from="gneE16" to="gneE25" probability="100"/>
+        <edgeRelation from="gneE17" to="gneE26" probability="100"/>
+        <edgeRelation from="gneE18" probability="100"/>
+        <edgeRelation from="gneE19" probability="100"/>
+        <edgeRelation from="gneE20" probability="100"/>
+        <edgeRelation from="gneE21" probability="100"/>
+        <edgeRelation from="gneE22" probability="100"/>
+        <edgeRelation from="gneE25" probability="100"/>
+        <edgeRelation from="gneE26" probability="100"/>
+        <edgeRelation from="gneE27" to="gneE28" probability="100"/>
+        <edgeRelation from="gneE28" to="gneE21" probability="50"/>
+        <edgeRelation from="gneE28" to="gneE22" probability="50"/>
+        <edgeRelation from="gneE29" to="-gneE30" probability="50"/>
+        <edgeRelation from="gneE29" to="gneE31" probability="50"/>
+        <edgeRelation from="gneE30" to="-gneE29" probability="50"/>
+        <edgeRelation from="gneE30" to="gneE31" probability="50"/>
+        <edgeRelation from="gneE31" to="gneE16" probability="33.33333333"/>
+        <edgeRelation from="gneE31" to="gneE17" probability="33.33333333"/>
+        <edgeRelation from="gneE31" to="gneE27" probability="33.33333333"/>
+        <edgeRelation from="gneE32" to="-gneE33" probability="50"/>
+        <edgeRelation from="gneE32" to="-gneE34" probability="50"/>
+        <edgeRelation from="gneE33" to="-gneE32" probability="50"/>
+        <edgeRelation from="gneE33" to="-gneE34" probability="50"/>
+        <edgeRelation from="gneE34" to="-gneE32" probability="50"/>
+        <edgeRelation from="gneE34" to="-gneE33" probability="50"/>
+        <edgeRelation from="gneE8" probability="100"/>
+        <edgeRelation from="gneE9" to="gneE10" probability="100"/>
+    </interval>
+</turns>

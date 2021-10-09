@@ -1,0 +1,20 @@
+<routes>
+    <personFlow id="p0" begin="0" end="500" period="5">
+       <walk from="NN" to="SS"/>
+   </personFlow>
+    <personFlow id="p1" begin="0" end="500" period="5">
+       <walk from="WW" to="EE"/>
+   </personFlow>
+
+    <vType id="bus1" maxSpeed="20.00" vClass="bus" color="red"/>
+    <vType id="car1" maxSpeed="50.00" vClass="passenger" color="green"/>
+
+    <flow id="c0" type="car1" begin="0.00" from="EE" to="CN" end="500.00" number="50"/>
+    <flow id="c1" type="car1" begin="0.00" from="EE" to="CW" end="500.00" number="50"/>
+    <flow id="c2" type="car1" begin="0.00" from="EE" to="CS" end="500.00" number="50"/>
+
+    <trip id="b0" type="bus1" depart="100.00" from="EE" to="CN"/>
+    <trip id="b1" type="bus1" depart="200.00" from="EE" to="CN"/>
+    <trip id="b2" type="bus1" depart="300.00" from="EE" to="CN"/>
+    <trip id="b3" type="bus1" depart="400.00" from="EE" to="CN"/>
+</routes>

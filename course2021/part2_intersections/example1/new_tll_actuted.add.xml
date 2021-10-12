@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<additional>
+    <tlLogic id="C" type="delay_based" programID="a" offset="0">
+        <param key="detectorRange" value="25" />
+        <param key="minTimeLoss" value="1" />
+        <param key="show-detectors" value="true"/>
+
+        <phase duration="15" minDur="10" maxDur="30" state="gGggrrrrgGggrrrrrGrG"/>
+        <phase duration="5" state="gGggrrrrgGggrrrrrrrr"/>
+        <phase duration="5" state="yyggrrrryyggrrrrrrrr"/>
+        <phase duration="5" state="rrGGrrrrrrGGrrrrrrrr"/>
+        <phase duration="3" state="rryyrrrrrryyrrrrrrrr"/>
+        <phase duration="15" minDur="10" maxDur="30" state="rrrrgGggrrrrgGggGrGr"/>
+        <phase duration="5" state="rrrrgGggrrrrgGggrrrr"/>
+        <phase duration="5" state="rrrryyggrrrryyggrrrr"/>
+        <phase duration="5" state="rrrrrrGGrrrrrrGGrrrr"/>
+        <phase duration="3" state="rrrrrryyrrrrrryyrrrr"/>
+    </tlLogic>
+</additional>

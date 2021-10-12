@@ -1,0 +1,642 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on Mon Oct 11 19:52:52 2021 by Eclipse SUMO duarouter Version v1_7_0+1095-7111e26d53
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/duarouterConfiguration.xsd">
+
+    <input>
+        <net-file value="network3.net.xml"/>
+        <route-files value="trips.rou.xml"/>
+    </input>
+
+    <output>
+        <output-file value="single_routes.rou.xml"/>
+        <alternatives-output value="single_routes.rou.alt.xml"/>
+    </output>
+
+</configuration>
+-->
+
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+    <person id="p0.0" depart="0.00">
+        <personTrip from="NN" to="SS" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <person id="p1.0" depart="0.00">
+        <personTrip from="WW" to="EE" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <vType id="car1" maxSpeed="50.00" vClass="passenger" color="green"/>
+    <vehicle id="c0.0" type="car1" depart="0.00">
+        <routeDistribution last="0">
+            <route cost="31.94" probability="1.00000000" edges="EE EC CN"/>
+        </routeDistribution>
+    </vehicle>
+    <vehicle id="c1.0" type="car1" depart="0.00">
+        <routeDistribution last="0">
+            <route cost="30.12" probability="1.00000000" edges="EE EC CW"/>
+        </routeDistribution>
+    </vehicle>
+    <vehicle id="c2.0" type="car1" depart="0.00">
+        <routeDistribution last="0">
+            <route cost="31.51" probability="1.00000000" edges="EE EC CS"/>
+        </routeDistribution>
+    </vehicle>
+    <person id="p0.1" depart="10.00">
+        <personTrip from="NN" to="SS" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <person id="p1.1" depart="10.00">
+        <personTrip from="WW" to="EE" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <person id="p0.2" depart="20.00">
+        <personTrip from="NN" to="SS" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <person id="p1.2" depart="20.00">
+        <personTrip from="WW" to="EE" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <vehicle id="c0.1" type="car1" depart="25.00">
+        <routeDistribution last="0">
+            <route cost="31.94" probability="1.00000000" edges="EE EC CN"/>
+        </routeDistribution>
+    </vehicle>
+    <vehicle id="c1.1" type="car1" depart="25.00">
+        <routeDistribution last="0">
+            <route cost="30.12" probability="1.00000000" edges="EE EC CW"/>
+        </routeDistribution>
+    </vehicle>
+    <vehicle id="c2.1" type="car1" depart="25.00">
+        <routeDistribution last="0">
+            <route cost="31.51" probability="1.00000000" edges="EE EC CS"/>
+        </routeDistribution>
+    </vehicle>
+    <person id="p0.3" depart="30.00">
+        <personTrip from="NN" to="SS" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <person id="p1.3" depart="30.00">
+        <personTrip from="WW" to="EE" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <person id="p0.4" depart="40.00">
+        <personTrip from="NN" to="SS" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <person id="p1.4" depart="40.00">
+        <personTrip from="WW" to="EE" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <person id="p0.5" depart="50.00">
+        <personTrip from="NN" to="SS" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <person id="p1.5" depart="50.00">
+        <personTrip from="WW" to="EE" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <vehicle id="c0.2" type="car1" depart="50.00">
+        <routeDistribution last="0">
+            <route cost="31.94" probability="1.00000000" edges="EE EC CN"/>
+        </routeDistribution>
+    </vehicle>
+    <vehicle id="c1.2" type="car1" depart="50.00">
+        <routeDistribution last="0">
+            <route cost="30.12" probability="1.00000000" edges="EE EC CW"/>
+        </routeDistribution>
+    </vehicle>
+    <vehicle id="c2.2" type="car1" depart="50.00">
+        <routeDistribution last="0">
+            <route cost="31.51" probability="1.00000000" edges="EE EC CS"/>
+        </routeDistribution>
+    </vehicle>
+    <person id="p0.6" depart="60.00">
+        <personTrip from="NN" to="SS" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <person id="p1.6" depart="60.00">
+        <personTrip from="WW" to="EE" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <person id="p0.7" depart="70.00">
+        <personTrip from="NN" to="SS" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <person id="p1.7" depart="70.00">
+        <personTrip from="WW" to="EE" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <vehicle id="c0.3" type="car1" depart="75.00">
+        <routeDistribution last="0">
+            <route cost="31.94" probability="1.00000000" edges="EE EC CN"/>
+        </routeDistribution>
+    </vehicle>
+    <vehicle id="c1.3" type="car1" depart="75.00">
+        <routeDistribution last="0">
+            <route cost="30.12" probability="1.00000000" edges="EE EC CW"/>
+        </routeDistribution>
+    </vehicle>
+    <vehicle id="c2.3" type="car1" depart="75.00">
+        <routeDistribution last="0">
+            <route cost="31.51" probability="1.00000000" edges="EE EC CS"/>
+        </routeDistribution>
+    </vehicle>
+    <person id="p0.8" depart="80.00">
+        <personTrip from="NN" to="SS" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <person id="p1.8" depart="80.00">
+        <personTrip from="WW" to="EE" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <person id="p0.9" depart="90.00">
+        <personTrip from="NN" to="SS" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <person id="p1.9" depart="90.00">
+        <personTrip from="WW" to="EE" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <person id="p0.10" depart="100.00">
+        <personTrip from="NN" to="SS" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <person id="p1.10" depart="100.00">
+        <personTrip from="WW" to="EE" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <vType id="bus1" maxSpeed="20.00" vClass="bus" color="red"/>
+    <vehicle id="b0" type="bus1" depart="100.00">
+        <routeDistribution last="0">
+            <route cost="31.94" probability="1.00000000" edges="EE EC CN"/>
+        </routeDistribution>
+    </vehicle>
+    <vehicle id="c0.4" type="car1" depart="100.00">
+        <routeDistribution last="0">
+            <route cost="31.94" probability="1.00000000" edges="EE EC CN"/>
+        </routeDistribution>
+    </vehicle>
+    <vehicle id="c1.4" type="car1" depart="100.00">
+        <routeDistribution last="0">
+            <route cost="30.12" probability="1.00000000" edges="EE EC CW"/>
+        </routeDistribution>
+    </vehicle>
+    <vehicle id="c2.4" type="car1" depart="100.00">
+        <routeDistribution last="0">
+            <route cost="31.51" probability="1.00000000" edges="EE EC CS"/>
+        </routeDistribution>
+    </vehicle>
+    <person id="p0.11" depart="110.00">
+        <personTrip from="NN" to="SS" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <person id="p1.11" depart="110.00">
+        <personTrip from="WW" to="EE" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <person id="p0.12" depart="120.00">
+        <personTrip from="NN" to="SS" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <person id="p1.12" depart="120.00">
+        <personTrip from="WW" to="EE" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <vehicle id="c0.5" type="car1" depart="125.00">
+        <routeDistribution last="0">
+            <route cost="31.94" probability="1.00000000" edges="EE EC CN"/>
+        </routeDistribution>
+    </vehicle>
+    <vehicle id="c1.5" type="car1" depart="125.00">
+        <routeDistribution last="0">
+            <route cost="30.12" probability="1.00000000" edges="EE EC CW"/>
+        </routeDistribution>
+    </vehicle>
+    <vehicle id="c2.5" type="car1" depart="125.00">
+        <routeDistribution last="0">
+            <route cost="31.51" probability="1.00000000" edges="EE EC CS"/>
+        </routeDistribution>
+    </vehicle>
+    <person id="p0.13" depart="130.00">
+        <personTrip from="NN" to="SS" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <person id="p1.13" depart="130.00">
+        <personTrip from="WW" to="EE" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <person id="p0.14" depart="140.00">
+        <personTrip from="NN" to="SS" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <person id="p1.14" depart="140.00">
+        <personTrip from="WW" to="EE" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <person id="p0.15" depart="150.00">
+        <personTrip from="NN" to="SS" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <person id="p1.15" depart="150.00">
+        <personTrip from="WW" to="EE" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <vehicle id="c0.6" type="car1" depart="150.00">
+        <routeDistribution last="0">
+            <route cost="31.94" probability="1.00000000" edges="EE EC CN"/>
+        </routeDistribution>
+    </vehicle>
+    <vehicle id="c1.6" type="car1" depart="150.00">
+        <routeDistribution last="0">
+            <route cost="30.12" probability="1.00000000" edges="EE EC CW"/>
+        </routeDistribution>
+    </vehicle>
+    <vehicle id="c2.6" type="car1" depart="150.00">
+        <routeDistribution last="0">
+            <route cost="31.51" probability="1.00000000" edges="EE EC CS"/>
+        </routeDistribution>
+    </vehicle>
+    <person id="p0.16" depart="160.00">
+        <personTrip from="NN" to="SS" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <person id="p1.16" depart="160.00">
+        <personTrip from="WW" to="EE" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <person id="p0.17" depart="170.00">
+        <personTrip from="NN" to="SS" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <person id="p1.17" depart="170.00">
+        <personTrip from="WW" to="EE" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <vehicle id="c0.7" type="car1" depart="175.00">
+        <routeDistribution last="0">
+            <route cost="31.94" probability="1.00000000" edges="EE EC CN"/>
+        </routeDistribution>
+    </vehicle>
+    <vehicle id="c1.7" type="car1" depart="175.00">
+        <routeDistribution last="0">
+            <route cost="30.12" probability="1.00000000" edges="EE EC CW"/>
+        </routeDistribution>
+    </vehicle>
+    <vehicle id="c2.7" type="car1" depart="175.00">
+        <routeDistribution last="0">
+            <route cost="31.51" probability="1.00000000" edges="EE EC CS"/>
+        </routeDistribution>
+    </vehicle>
+    <person id="p0.18" depart="180.00">
+        <personTrip from="NN" to="SS" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <person id="p1.18" depart="180.00">
+        <personTrip from="WW" to="EE" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <person id="p0.19" depart="190.00">
+        <personTrip from="NN" to="SS" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <person id="p1.19" depart="190.00">
+        <personTrip from="WW" to="EE" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <person id="p0.20" depart="200.00">
+        <personTrip from="NN" to="SS" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <person id="p1.20" depart="200.00">
+        <personTrip from="WW" to="EE" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <vehicle id="b1" type="bus1" depart="200.00">
+        <routeDistribution last="0">
+            <route cost="31.94" probability="1.00000000" edges="EE EC CN"/>
+        </routeDistribution>
+    </vehicle>
+    <vehicle id="c0.8" type="car1" depart="200.00">
+        <routeDistribution last="0">
+            <route cost="31.94" probability="1.00000000" edges="EE EC CN"/>
+        </routeDistribution>
+    </vehicle>
+    <vehicle id="c1.8" type="car1" depart="200.00">
+        <routeDistribution last="0">
+            <route cost="30.12" probability="1.00000000" edges="EE EC CW"/>
+        </routeDistribution>
+    </vehicle>
+    <vehicle id="c2.8" type="car1" depart="200.00">
+        <routeDistribution last="0">
+            <route cost="31.51" probability="1.00000000" edges="EE EC CS"/>
+        </routeDistribution>
+    </vehicle>
+    <person id="p0.21" depart="210.00">
+        <personTrip from="NN" to="SS" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <person id="p1.21" depart="210.00">
+        <personTrip from="WW" to="EE" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <person id="p0.22" depart="220.00">
+        <personTrip from="NN" to="SS" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <person id="p1.22" depart="220.00">
+        <personTrip from="WW" to="EE" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <vehicle id="c0.9" type="car1" depart="225.00">
+        <routeDistribution last="0">
+            <route cost="31.94" probability="1.00000000" edges="EE EC CN"/>
+        </routeDistribution>
+    </vehicle>
+    <vehicle id="c1.9" type="car1" depart="225.00">
+        <routeDistribution last="0">
+            <route cost="30.12" probability="1.00000000" edges="EE EC CW"/>
+        </routeDistribution>
+    </vehicle>
+    <vehicle id="c2.9" type="car1" depart="225.00">
+        <routeDistribution last="0">
+            <route cost="31.51" probability="1.00000000" edges="EE EC CS"/>
+        </routeDistribution>
+    </vehicle>
+    <person id="p0.23" depart="230.00">
+        <personTrip from="NN" to="SS" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <person id="p1.23" depart="230.00">
+        <personTrip from="WW" to="EE" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <person id="p0.24" depart="240.00">
+        <personTrip from="NN" to="SS" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <person id="p1.24" depart="240.00">
+        <personTrip from="WW" to="EE" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <person id="p0.25" depart="250.00">
+        <personTrip from="NN" to="SS" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <person id="p1.25" depart="250.00">
+        <personTrip from="WW" to="EE" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <vehicle id="c0.10" type="car1" depart="250.00">
+        <routeDistribution last="0">
+            <route cost="31.94" probability="1.00000000" edges="EE EC CN"/>
+        </routeDistribution>
+    </vehicle>
+    <vehicle id="c1.10" type="car1" depart="250.00">
+        <routeDistribution last="0">
+            <route cost="30.12" probability="1.00000000" edges="EE EC CW"/>
+        </routeDistribution>
+    </vehicle>
+    <vehicle id="c2.10" type="car1" depart="250.00">
+        <routeDistribution last="0">
+            <route cost="31.51" probability="1.00000000" edges="EE EC CS"/>
+        </routeDistribution>
+    </vehicle>
+    <person id="p0.26" depart="260.00">
+        <personTrip from="NN" to="SS" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <person id="p1.26" depart="260.00">
+        <personTrip from="WW" to="EE" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <person id="p0.27" depart="270.00">
+        <personTrip from="NN" to="SS" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <person id="p1.27" depart="270.00">
+        <personTrip from="WW" to="EE" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <vehicle id="c0.11" type="car1" depart="275.00">
+        <routeDistribution last="0">
+            <route cost="31.94" probability="1.00000000" edges="EE EC CN"/>
+        </routeDistribution>
+    </vehicle>
+    <vehicle id="c1.11" type="car1" depart="275.00">
+        <routeDistribution last="0">
+            <route cost="30.12" probability="1.00000000" edges="EE EC CW"/>
+        </routeDistribution>
+    </vehicle>
+    <vehicle id="c2.11" type="car1" depart="275.00">
+        <routeDistribution last="0">
+            <route cost="31.51" probability="1.00000000" edges="EE EC CS"/>
+        </routeDistribution>
+    </vehicle>
+    <person id="p0.28" depart="280.00">
+        <personTrip from="NN" to="SS" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <person id="p1.28" depart="280.00">
+        <personTrip from="WW" to="EE" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <person id="p0.29" depart="290.00">
+        <personTrip from="NN" to="SS" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <person id="p1.29" depart="290.00">
+        <personTrip from="WW" to="EE" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <person id="p0.30" depart="300.00">
+        <personTrip from="NN" to="SS" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <person id="p1.30" depart="300.00">
+        <personTrip from="WW" to="EE" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <vehicle id="b2" type="bus1" depart="300.00">
+        <routeDistribution last="0">
+            <route cost="31.94" probability="1.00000000" edges="EE EC CN"/>
+        </routeDistribution>
+    </vehicle>
+    <vehicle id="c0.12" type="car1" depart="300.00">
+        <routeDistribution last="0">
+            <route cost="31.94" probability="1.00000000" edges="EE EC CN"/>
+        </routeDistribution>
+    </vehicle>
+    <vehicle id="c1.12" type="car1" depart="300.00">
+        <routeDistribution last="0">
+            <route cost="30.12" probability="1.00000000" edges="EE EC CW"/>
+        </routeDistribution>
+    </vehicle>
+    <vehicle id="c2.12" type="car1" depart="300.00">
+        <routeDistribution last="0">
+            <route cost="31.51" probability="1.00000000" edges="EE EC CS"/>
+        </routeDistribution>
+    </vehicle>
+    <person id="p0.31" depart="310.00">
+        <personTrip from="NN" to="SS" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <person id="p1.31" depart="310.00">
+        <personTrip from="WW" to="EE" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <person id="p0.32" depart="320.00">
+        <personTrip from="NN" to="SS" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <person id="p1.32" depart="320.00">
+        <personTrip from="WW" to="EE" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <vehicle id="c0.13" type="car1" depart="325.00">
+        <routeDistribution last="0">
+            <route cost="31.94" probability="1.00000000" edges="EE EC CN"/>
+        </routeDistribution>
+    </vehicle>
+    <vehicle id="c1.13" type="car1" depart="325.00">
+        <routeDistribution last="0">
+            <route cost="30.12" probability="1.00000000" edges="EE EC CW"/>
+        </routeDistribution>
+    </vehicle>
+    <vehicle id="c2.13" type="car1" depart="325.00">
+        <routeDistribution last="0">
+            <route cost="31.51" probability="1.00000000" edges="EE EC CS"/>
+        </routeDistribution>
+    </vehicle>
+    <person id="p0.33" depart="330.00">
+        <personTrip from="NN" to="SS" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <person id="p1.33" depart="330.00">
+        <personTrip from="WW" to="EE" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <person id="p0.34" depart="340.00">
+        <personTrip from="NN" to="SS" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <person id="p1.34" depart="340.00">
+        <personTrip from="WW" to="EE" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <person id="p0.35" depart="350.00">
+        <personTrip from="NN" to="SS" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <person id="p1.35" depart="350.00">
+        <personTrip from="WW" to="EE" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <vehicle id="c0.14" type="car1" depart="350.00">
+        <routeDistribution last="0">
+            <route cost="31.94" probability="1.00000000" edges="EE EC CN"/>
+        </routeDistribution>
+    </vehicle>
+    <vehicle id="c1.14" type="car1" depart="350.00">
+        <routeDistribution last="0">
+            <route cost="30.12" probability="1.00000000" edges="EE EC CW"/>
+        </routeDistribution>
+    </vehicle>
+    <vehicle id="c2.14" type="car1" depart="350.00">
+        <routeDistribution last="0">
+            <route cost="31.51" probability="1.00000000" edges="EE EC CS"/>
+        </routeDistribution>
+    </vehicle>
+    <person id="p0.36" depart="360.00">
+        <personTrip from="NN" to="SS" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <person id="p1.36" depart="360.00">
+        <personTrip from="WW" to="EE" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <person id="p0.37" depart="370.00">
+        <personTrip from="NN" to="SS" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <person id="p1.37" depart="370.00">
+        <personTrip from="WW" to="EE" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <vehicle id="c0.15" type="car1" depart="375.00">
+        <routeDistribution last="0">
+            <route cost="31.94" probability="1.00000000" edges="EE EC CN"/>
+        </routeDistribution>
+    </vehicle>
+    <vehicle id="c1.15" type="car1" depart="375.00">
+        <routeDistribution last="0">
+            <route cost="30.12" probability="1.00000000" edges="EE EC CW"/>
+        </routeDistribution>
+    </vehicle>
+    <vehicle id="c2.15" type="car1" depart="375.00">
+        <routeDistribution last="0">
+            <route cost="31.51" probability="1.00000000" edges="EE EC CS"/>
+        </routeDistribution>
+    </vehicle>
+    <person id="p0.38" depart="380.00">
+        <personTrip from="NN" to="SS" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <person id="p1.38" depart="380.00">
+        <personTrip from="WW" to="EE" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <person id="p0.39" depart="390.00">
+        <personTrip from="NN" to="SS" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <person id="p1.39" depart="390.00">
+        <personTrip from="WW" to="EE" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <person id="p0.40" depart="400.00">
+        <personTrip from="NN" to="SS" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <person id="p1.40" depart="400.00">
+        <personTrip from="WW" to="EE" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <vehicle id="b3" type="bus1" depart="400.00">
+        <routeDistribution last="0">
+            <route cost="31.94" probability="1.00000000" edges="EE EC CN"/>
+        </routeDistribution>
+    </vehicle>
+    <vehicle id="c0.16" type="car1" depart="400.00">
+        <routeDistribution last="0">
+            <route cost="31.94" probability="1.00000000" edges="EE EC CN"/>
+        </routeDistribution>
+    </vehicle>
+    <vehicle id="c1.16" type="car1" depart="400.00">
+        <routeDistribution last="0">
+            <route cost="30.12" probability="1.00000000" edges="EE EC CW"/>
+        </routeDistribution>
+    </vehicle>
+    <vehicle id="c2.16" type="car1" depart="400.00">
+        <routeDistribution last="0">
+            <route cost="31.51" probability="1.00000000" edges="EE EC CS"/>
+        </routeDistribution>
+    </vehicle>
+    <person id="p0.41" depart="410.00">
+        <personTrip from="NN" to="SS" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <person id="p1.41" depart="410.00">
+        <personTrip from="WW" to="EE" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <person id="p0.42" depart="420.00">
+        <personTrip from="NN" to="SS" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <person id="p1.42" depart="420.00">
+        <personTrip from="WW" to="EE" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <vehicle id="c0.17" type="car1" depart="425.00">
+        <routeDistribution last="0">
+            <route cost="31.94" probability="1.00000000" edges="EE EC CN"/>
+        </routeDistribution>
+    </vehicle>
+    <vehicle id="c1.17" type="car1" depart="425.00">
+        <routeDistribution last="0">
+            <route cost="30.12" probability="1.00000000" edges="EE EC CW"/>
+        </routeDistribution>
+    </vehicle>
+    <vehicle id="c2.17" type="car1" depart="425.00">
+        <routeDistribution last="0">
+            <route cost="31.51" probability="1.00000000" edges="EE EC CS"/>
+        </routeDistribution>
+    </vehicle>
+    <person id="p0.43" depart="430.00">
+        <personTrip from="NN" to="SS" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <person id="p1.43" depart="430.00">
+        <personTrip from="WW" to="EE" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <person id="p0.44" depart="440.00">
+        <personTrip from="NN" to="SS" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <person id="p1.44" depart="440.00">
+        <personTrip from="WW" to="EE" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <person id="p0.45" depart="450.00">
+        <personTrip from="NN" to="SS" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <person id="p1.45" depart="450.00">
+        <personTrip from="WW" to="EE" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <vehicle id="c0.18" type="car1" depart="450.00">
+        <routeDistribution last="0">
+            <route cost="31.94" probability="1.00000000" edges="EE EC CN"/>
+        </routeDistribution>
+    </vehicle>
+    <vehicle id="c1.18" type="car1" depart="450.00">
+        <routeDistribution last="0">
+            <route cost="30.12" probability="1.00000000" edges="EE EC CW"/>
+        </routeDistribution>
+    </vehicle>
+    <vehicle id="c2.18" type="car1" depart="450.00">
+        <routeDistribution last="0">
+            <route cost="31.51" probability="1.00000000" edges="EE EC CS"/>
+        </routeDistribution>
+    </vehicle>
+    <person id="p0.46" depart="460.00">
+        <personTrip from="NN" to="SS" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <person id="p1.46" depart="460.00">
+        <personTrip from="WW" to="EE" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <person id="p0.47" depart="470.00">
+        <personTrip from="NN" to="SS" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <person id="p1.47" depart="470.00">
+        <personTrip from="WW" to="EE" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <vehicle id="c0.19" type="car1" depart="475.00">
+        <routeDistribution last="0">
+            <route cost="31.94" probability="1.00000000" edges="EE EC CN"/>
+        </routeDistribution>
+    </vehicle>
+    <vehicle id="c1.19" type="car1" depart="475.00">
+        <routeDistribution last="0">
+            <route cost="30.12" probability="1.00000000" edges="EE EC CW"/>
+        </routeDistribution>
+    </vehicle>
+    <vehicle id="c2.19" type="car1" depart="475.00">
+        <routeDistribution last="0">
+            <route cost="31.51" probability="1.00000000" edges="EE EC CS"/>
+        </routeDistribution>
+    </vehicle>
+    <person id="p0.48" depart="480.00">
+        <personTrip from="NN" to="SS" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <person id="p1.48" depart="480.00">
+        <personTrip from="WW" to="EE" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <person id="p0.49" depart="490.00">
+        <personTrip from="NN" to="SS" walkFactor="0.75" costs="391.16"/>
+    </person>
+    <person id="p1.49" depart="490.00">
+        <personTrip from="WW" to="EE" walkFactor="0.75" costs="391.16"/>
+    </person>
+</routes>

@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on Mon Oct 11 19:39:43 2021 by Eclipse SUMO duarouter Version v1_7_0+1095-7111e26d53
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/duarouterConfiguration.xsd">
+
+    <input>
+        <net-file value="network3_double.net.xml"/>
+        <route-files value="double_routes.rou.xml"/>
+    </input>
+
+    <output>
+        <output-file value="double_routes.rou.xml.tmp"/>
+        <write-trips value="true"/>
+    </output>
+
+    <time>
+        <begin value="0"/>
+        <end value="3600"/>
+    </time>
+
+    <report>
+        <no-warnings value="true"/>
+        <ignore-errors value="true"/>
+        <no-step-log value="true"/>
+    </report>
+
+</configuration>
+-->
+
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+    <trip id="1" depart="10.00" from="leftSC" to="leftCW"/>
+    <trip id="2" depart="20.00" from="rightNN" to="rightCS"/>
+    <trip id="4" depart="40.00" from="leftWC" to="leftCE"/>
+    <trip id="6" depart="60.00" from="leftEC" to="leftCW"/>
+    <trip id="7" depart="70.00" from="rightNC" to="rightCE"/>
+    <trip id="10" depart="100.00" from="rightSC" to="rightCW"/>
+    <trip id="11" depart="110.00" from="leftSS" to="leftCS"/>
+    <trip id="13" depart="130.00" from="leftEE" to="leftCN"/>
+    <trip id="14" depart="140.00" from="rightSS" to="rightCN"/>
+    <trip id="15" depart="150.00" from="rightSC" to="rightCW"/>
+    <trip id="16" depart="160.00" from="rightEC" to="rightWC"/>
+    <trip id="18" depart="180.00" from="rightSS" to="rightCN"/>
+    <trip id="19" depart="190.00" from="rightSS" to="rightCN"/>
+    <trip id="21" depart="210.00" from="leftNN" to="leftEC"/>
+    <trip id="22" depart="220.00" from="leftEE" to="leftCW"/>
+    <trip id="23" depart="230.00" from="leftEE" to="leftEC"/>
+    <trip id="25" depart="250.00" from="leftSS" to="leftCW"/>
+    <trip id="27" depart="270.00" from="rightNC" to="rightCN"/>
+    <trip id="29" depart="290.00" from="leftNC" to="leftSC"/>
+    <trip id="30" depart="300.00" from="rightWW" to="rightCS"/>
+    <trip id="31" depart="310.00" from="rightEC" to="rightCS"/>
+    <trip id="32" depart="320.00" from="rightSS" to="rightEC"/>
+    <trip id="33" depart="330.00" from="leftNN" to="leftCE"/>
+    <trip id="34" depart="340.00" from="leftSS" to="leftEC"/>
+    <trip id="39" depart="390.00" from="leftSC" to="leftCW"/>
+    <trip id="41" depart="410.00" from="rightEE" to="rightSC"/>
+    <trip id="42" depart="420.00" from="leftWC" to="leftCW"/>
+    <trip id="43" depart="430.00" from="rightWW" to="rightCE"/>
+    <trip id="44" depart="440.00" from="leftEE" to="leftCE"/>
+    <trip id="47" depart="470.00" from="leftEE" to="leftSC"/>
+    <trip id="48" depart="480.00" from="rightWW" to="rightCE"/>
+    <trip id="49" depart="490.00" from="rightWW" to="rightNC"/>
+    <trip id="51" depart="510.00" from="rightNC" to="rightCE"/>
+    <trip id="53" depart="530.00" from="leftEE" to="leftSC"/>
+    <trip id="57" depart="570.00" from="rightWC" to="rightNC"/>
+    <trip id="60" depart="600.00" from="rightSC" to="rightCE"/>
+    <trip id="61" depart="610.00" from="rightSC" to="rightCE"/>
+    <trip id="62" depart="620.00" from="leftEC" to="leftNC"/>
+    <trip id="64" depart="640.00" from="rightWC" to="rightNC"/>
+    <trip id="65" depart="650.00" from="leftSC" to="leftCE"/>
+    <trip id="66" depart="660.00" from="rightWC" to="rightWC"/>
+    <trip id="67" depart="670.00" from="leftEE" to="leftWC"/>
+    <trip id="72" depart="720.00" from="leftWC" to="leftCW"/>
+    <trip id="73" depart="730.00" from="rightEC" to="rightCW"/>
+    <trip id="74" depart="740.00" from="leftNN" to="leftEC"/>
+    <trip id="75" depart="750.00" from="rightWW" to="rightCS"/>
+    <trip id="77" depart="770.00" from="leftEE" to="leftCW"/>
+    <trip id="79" depart="790.00" from="leftNN" to="leftCW"/>
+    <trip id="84" depart="840.00" from="leftNN" to="leftCS"/>
+    <trip id="85" depart="850.00" from="rightWC" to="rightCN"/>
+    <trip id="88" depart="880.00" from="leftEE" to="leftSC"/>
+    <trip id="89" depart="890.00" from="leftWC" to="leftWC"/>
+    <trip id="90" depart="900.00" from="rightNN" to="rightCS"/>
+    <trip id="92" depart="920.00" from="leftWC" to="leftNC"/>
+    <trip id="94" depart="940.00" from="leftNN" to="leftWC"/>
+    <trip id="95" depart="950.00" from="leftWC" to="leftEC"/>
+    <trip id="99" depart="990.00" from="rightWW" to="rightNC"/>
+    <trip id="100" depart="1000.00" from="rightWW" to="rightSC"/>
+    <trip id="102" depart="1020.00" from="leftWW" to="leftCW"/>
+    <trip id="103" depart="1030.00" from="leftWC" to="leftCE"/>
+    <trip id="106" depart="1060.00" from="leftWW" to="leftSC"/>
+    <trip id="107" depart="1070.00" from="rightWW" to="rightWC"/>
+    <trip id="108" depart="1080.00" from="rightEC" to="rightCW"/>
+    <trip id="109" depart="1090.00" from="leftNC" to="leftEC"/>
+    <trip id="110" depart="1100.00" from="rightWW" to="rightCN"/>
+    <trip id="111" depart="1110.00" from="rightEC" to="rightCW"/>
+    <trip id="113" depart="1130.00" from="rightEC" to="rightNC"/>
+    <trip id="115" depart="1150.00" from="leftEE" to="leftCS"/>
+    <trip id="116" depart="1160.00" from="rightEE" to="rightCS"/>
+    <trip id="117" depart="1170.00" from="leftNN" to="leftCN"/>
+    <trip id="119" depart="1190.00" from="rightEE" to="rightCN"/>
+    <trip id="121" depart="1210.00" from="rightEC" to="rightSC"/>
+    <trip id="123" depart="1230.00" from="leftNN" to="leftSC"/>
+    <trip id="126" depart="1260.00" from="leftEE" to="leftWC"/>
+    <trip id="127" depart="1270.00" from="rightWW" to="rightWC"/>
+    <trip id="128" depart="1280.00" from="leftEE" to="leftCW"/>
+    <trip id="130" depart="1300.00" from="rightWC" to="rightSC"/>
+    <trip id="131" depart="1310.00" from="leftSS" to="leftCS"/>
+    <trip id="132" depart="1320.00" from="rightSS" to="rightCW"/>
+    <trip id="133" depart="1330.00" from="rightEE" to="rightWC"/>
+    <trip id="136" depart="1360.00" from="rightNC" to="rightWC"/>
+    <trip id="137" depart="1370.00" from="leftNC" to="leftCN"/>
+    <trip id="144" depart="1440.00" from="leftWC" to="leftEC"/>
+    <trip id="147" depart="1470.00" from="rightNN" to="rightCE"/>
+    <trip id="148" depart="1480.00" from="leftWC" to="leftCE"/>
+    <trip id="150" depart="1500.00" from="rightWC" to="rightCE"/>
+    <trip id="151" depart="1510.00" from="rightSS" to="rightCN"/>
+    <trip id="152" depart="1520.00" from="leftNC" to="leftCS"/>
+    <trip id="154" depart="1540.00" from="rightSC" to="rightNC"/>
+    <trip id="156" depart="1560.00" from="leftNN" to="leftCN"/>
+    <trip id="157" depart="1570.00" from="rightSC" to="rightSC"/>
+    <trip id="160" depart="1600.00" from="rightSS" to="rightWC"/>
+    <trip id="161" depart="1610.00" from="rightSC" to="rightSC"/>
+    <trip id="164" depart="1640.00" from="rightSC" to="rightNC"/>
+    <trip id="167" depart="1670.00" from="rightSS" to="rightNC"/>
+    <trip id="169" depart="1690.00" from="leftWW" to="leftEC"/>
+    <trip id="171" depart="1710.00" from="leftEC" to="leftCW"/>
+    <trip id="175" depart="1750.00" from="rightWW" to="rightCE"/>
+    <trip id="179" depart="1790.00" from="leftEE" to="leftSC"/>
+    <trip id="181" depart="1810.00" from="rightEE" to="rightCE"/>
+    <trip id="185" depart="1850.00" from="rightEC" to="rightCW"/>
+    <trip id="186" depart="1860.00" from="rightNN" to="rightCS"/>
+    <trip id="187" depart="1870.00" from="leftSS" to="leftCN"/>
+    <trip id="191" depart="1910.00" from="leftSC" to="leftSC"/>
+    <trip id="192" depart="1920.00" from="leftWC" to="leftEC"/>
+    <trip id="193" depart="1930.00" from="leftNC" to="leftSC"/>
+    <trip id="194" depart="1940.00" from="rightWW" to="rightCS"/>
+    <trip id="195" depart="1950.00" from="rightWC" to="rightCN"/>
+    <trip id="197" depart="1970.00" from="leftEC" to="leftEC"/>
+    <trip id="200" depart="2000.00" from="leftWW" to="leftCW"/>
+    <trip id="205" depart="2050.00" from="rightSS" to="rightEC"/>
+    <trip id="207" depart="2070.00" from="leftNN" to="leftCE"/>
+    <trip id="208" depart="2080.00" from="leftNN" to="leftWC"/>
+    <trip id="212" depart="2120.00" from="leftWW" to="leftCW"/>
+    <trip id="214" depart="2140.00" from="rightSC" to="rightEC"/>
+    <trip id="215" depart="2150.00" from="leftEE" to="leftSC"/>
+    <trip id="220" depart="2200.00" from="rightNC" to="rightWC"/>
+    <trip id="221" depart="2210.00" from="rightEE" to="rightWC"/>
+    <trip id="222" depart="2220.00" from="rightWC" to="rightCN"/>
+    <trip id="223" depart="2230.00" from="rightNN" to="rightCE"/>
+    <trip id="224" depart="2240.00" from="rightSS" to="rightCE"/>
+    <trip id="225" depart="2250.00" from="rightWC" to="rightCW"/>
+    <trip id="226" depart="2260.00" from="leftWW" to="leftEC"/>
+    <trip id="228" depart="2280.00" from="rightSC" to="rightCE"/>
+    <trip id="230" depart="2300.00" from="leftEE" to="leftEC"/>
+    <trip id="231" depart="2310.00" from="leftSC" to="leftNC"/>
+    <trip id="236" depart="2360.00" from="leftWC" to="leftCW"/>
+    <trip id="238" depart="2380.00" from="rightEE" to="rightCW"/>
+    <trip id="239" depart="2390.00" from="rightSS" to="rightEC"/>
+    <trip id="240" depart="2400.00" from="leftWC" to="leftCE"/>
+    <trip id="242" depart="2420.00" from="rightSS" to="rightWC"/>
+    <trip id="244" depart="2440.00" from="rightEC" to="rightCN"/>
+    <trip id="245" depart="2450.00" from="leftNN" to="leftCW"/>
+    <trip id="246" depart="2460.00" from="leftWC" to="leftCE"/>
+    <trip id="248" depart="2480.00" from="leftWC" to="leftCS"/>
+    <trip id="249" depart="2490.00" from="leftWW" to="leftCS"/>
+    <trip id="253" depart="2530.00" from="leftNC" to="leftWC"/>
+    <trip id="254" depart="2540.00" from="leftEC" to="leftSC"/>
+    <trip id="255" depart="2550.00" from="leftNN" to="leftNC"/>
+    <trip id="257" depart="2570.00" from="rightSC" to="rightNC"/>
+    <trip id="258" depart="2580.00" from="leftSC" to="leftCN"/>
+    <trip id="261" depart="2610.00" from="rightNC" to="rightEC"/>
+    <trip id="262" depart="2620.00" from="rightNC" to="rightEC"/>
+    <trip id="264" depart="2640.00" from="leftEC" to="leftCS"/>
+    <trip id="267" depart="2670.00" from="rightNN" to="rightEC"/>
+    <trip id="270" depart="2700.00" from="rightSS" to="rightWC"/>
+    <trip id="271" depart="2710.00" from="leftEE" to="leftCE"/>
+    <trip id="275" depart="2750.00" from="rightNN" to="rightCS"/>
+    <trip id="277" depart="2770.00" from="rightSS" to="rightCN"/>
+    <trip id="280" depart="2800.00" from="leftWC" to="leftNC"/>
+    <trip id="282" depart="2820.00" from="rightSS" to="rightNC"/>
+    <trip id="284" depart="2840.00" from="rightNC" to="rightNC"/>
+    <trip id="286" depart="2860.00" from="rightNN" to="rightWC"/>
+    <trip id="294" depart="2940.00" from="leftWC" to="leftCE"/>
+    <trip id="302" depart="3020.00" from="rightNN" to="rightCS"/>
+    <trip id="304" depart="3040.00" from="leftEE" to="leftCW"/>
+    <trip id="310" depart="3100.00" from="leftSC" to="leftCN"/>
+    <trip id="311" depart="3110.00" from="leftNN" to="leftCN"/>
+    <trip id="312" depart="3120.00" from="rightEC" to="rightEC"/>
+    <trip id="313" depart="3130.00" from="leftNC" to="leftCW"/>
+    <trip id="315" depart="3150.00" from="rightWW" to="rightCE"/>
+    <trip id="316" depart="3160.00" from="leftSC" to="leftCN"/>
+    <trip id="317" depart="3170.00" from="leftNN" to="leftCW"/>
+    <trip id="318" depart="3180.00" from="leftNC" to="leftCE"/>
+    <trip id="320" depart="3200.00" from="rightWW" to="rightCE"/>
+    <trip id="323" depart="3230.00" from="rightSS" to="rightCN"/>
+    <trip id="324" depart="3240.00" from="leftWW" to="leftWC"/>
+    <trip id="325" depart="3250.00" from="leftNC" to="leftCE"/>
+    <trip id="329" depart="3290.00" from="leftEC" to="leftCS"/>
+    <trip id="332" depart="3320.00" from="rightSC" to="rightCN"/>
+    <trip id="337" depart="3370.00" from="rightEE" to="rightCN"/>
+    <trip id="338" depart="3380.00" from="rightNN" to="rightWC"/>
+    <trip id="339" depart="3390.00" from="leftNN" to="leftCW"/>
+    <trip id="341" depart="3410.00" from="leftNC" to="leftCN"/>
+    <trip id="342" depart="3420.00" from="leftEC" to="leftWC"/>
+    <trip id="346" depart="3460.00" from="rightNC" to="rightSC"/>
+    <trip id="347" depart="3470.00" from="rightSC" to="rightCS"/>
+    <trip id="348" depart="3480.00" from="rightNC" to="rightSC"/>
+    <trip id="350" depart="3500.00" from="rightNC" to="rightSC"/>
+    <trip id="352" depart="3520.00" from="leftNC" to="leftEC"/>
+    <trip id="353" depart="3530.00" from="rightNN" to="rightCN"/>
+    <trip id="354" depart="3540.00" from="leftSC" to="leftCN"/>
+    <trip id="355" depart="3550.00" from="rightNN" to="rightCW"/>
+    <trip id="356" depart="3560.00" from="rightWW" to="rightCE"/>
+    <trip id="357" depart="3570.00" from="leftWW" to="leftCN"/>
+    <trip id="358" depart="3580.00" from="leftEC" to="leftSC"/>
+    <trip id="359" depart="3590.00" from="leftSS" to="leftEC"/>
+</routes>

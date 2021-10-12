@@ -1,0 +1,17 @@
+<connections>    
+    <connection from="EC" to="CN"/>
+    <connection from="EC" to="CW"/>
+    <connection from="EC" to="CS"/>
+
+    <connection from="NC" to="CW"/>
+    <connection from="NC" to="CS"/>
+    <connection from="NC" to="CE"/>
+
+    <connection from="WC" to="CS"/>
+    <connection from="WC" to="CE"/>
+    <connection from="WC" to="CN"/>
+
+    <connection from="SC" to="CE"/>
+    <connection from="SC" to="CN"/>
+    <connection from="SC" to="CW"/>
+</connections>

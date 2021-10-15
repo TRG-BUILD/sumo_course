@@ -26,3 +26,9 @@ Create a corridor and simulate it in 2 different ways
 - With vehicle controlled controller
 - With fixed time coordination
 (Extras for fast) add bicycle lane and pedestrian crossings
+
+
+## Students confused about
+- netedit showing routes on incorrect lanes, but its based on edges, explain
+- netedit has vehicles per hour options
+- create a boink turn with a stop [like here](https://sumo.dlr.de/docs/Simulation/Bicycles.html#indirect_left_turn) and this paper Grigoropoulos et al. -  Modelling Bicycle Infrastructure in SUMO

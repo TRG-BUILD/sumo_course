@@ -3,7 +3,7 @@
 - Model an intersection from an assignment with Rasmus
 - Generate corresponding demands
 - Visualize how the intersection functions without TLS
-- Add a pre-timed TLS to the intersection with your phase and durations times and generate tripinfos-output
+- Add a pre-timed TLS to the intersection with your phase and durations times and generate `tripinfo` type output
 - Calculate pre-timed TLS with SUMO optimization using https://sumo.dlr.de/docs/Tools/tls.html#tlscycleadaptationpy 
 - Compare those 2 scenarios using the trip statistics tool https://sumo.dlr.de/docs/Tools/Output.html#tripstatisticspy
 
@@ -95,11 +95,13 @@ Traffic lights can be generated in `netedit` by pressing on Traffic Light mode i
 <!-- in lights.add.xml -->
 <additionals>
     <tlLogic id="C" type="static" programID="0" offset="0">
+        
+        <!-- West-East-->
         <phase duration="33" state="rrrGGgrrrGGg"/>
         <phase duration="3"  state="rrryygrrryyg"/>
         <phase duration="6"  state="rrrrrGrrrrrG"/>
         <phase duration="3"  state="rrrrryrrrrry"/>
-
+        <!-- North-South-->
         <phase duration="33" state="GGgrrrGGgrrr"/>
         <phase duration="3"  state="yygrrryygrrr"/>
         <phase duration="6"  state="rrGrrrrrGrrr"/>
@@ -111,23 +113,95 @@ We can see that for each direction we have all maneuvers phase and left turn pha
 ```
 ![](doc/with_sumo_tls.gif)
 
-Lets try to use one of the SUMO python tools `tlsCycleAdaptation.py` to optimize the phase times accrding to [this doc](https://sumo.dlr.de/docs/Tools/tls.html#tlscycleadaptationpy).
-
-Unlike our shorthand demand definitions `flow` and `trip` from [this doc](https://sumo.dlr.de/docs/Demand/Shortest_or_Optimal_Path_Routing.html) the tool description says that it only supports full demand definition of de the type `vehicle`. We will use `duarouter` that performs [Dynamic User Assignment](https://sumo.dlr.de/docs/Demand/Dynamic_User_Assignment.html) to obtain the correct demand format.
+Lets try to use one of the SUMO python tools `tlsCycleAdaptation.py` to optimize the phase times accrding to [this doc](https://sumo.dlr.de/docs/Tools/tls.html#tlscycleadaptationpy). Unlike our shorthand demand definitions `flow` and `trip` from [this doc](https://sumo.dlr.de/docs/Demand/Shortest_or_Optimal_Path_Routing.html) the tool description says that it only supports full demand definition of de the type `vehicle`. We will use `duarouter` that performs [Dynamic User Assignment](https://sumo.dlr.de/docs/Demand/Dynamic_User_Assignment.html) to obtain the correct demand format.
 
 ```sh
 duarouter --route-files demands.rou.xml --net-file network.net.xml --output-file vehicle_demands.rou.xml
 ```
 
+As a result we got a file with the following content that, however, represents exactly the same traffic as our `route` and `flow` definitions.
+
+```xml
+<!-- vehicle_demands.rou.xml-->
+<routes>
+    <vType id="type2" length="5.00" maxSpeed="60.00" probability="0.50" color="magenta" accel="2.5"/>
+    <vehicle id="fA1forward.0" type="type2" depart="0.00">
+        <route edges="fromA1 fromA11 toA22 toA2"/>
+    </vehicle>
+    <vehicle id="fA1left.0" type="type2" depart="0.00">
+        <route edges="fromA1 fromA11 toB1"/>
+    </vehicle>
+    <vehicle id="fA1right.0" type="type2" depart="0.00">
+        <route edges="fromA1 fromA11 toB22 toB2"/>
+    </vehicle>
+
+    ...
+
+<routes/>
+```
+
+And now we can calculate the optimal phase durations as follows:
+
 Windows:
 ```sh
-python "%SUMO_HOME%\\tools\\tlsCycleAdaptation.py" -n network3.net.xml -r routes.rou.xml -o new_tls.add.xml --verbose
+python "%SUMO_HOME%\\tools\\tlsCycleAdaptation.py" -n network.net.xml -r vehicle_demands.rou.xml -o optimal_lights.add.xml --verbose
 ```
 
 Linux:
 ```sh
-python $SUMO_HOME/tools/tlsCycleAdaptation.py -n network3.net.xml -r routes.rou.xml -o newTLS.add.xml --verbose
+python $SUMO_HOME/tools/tlsCycleAdaptation.py -n network.net.xml -r vehicle_demands.rou.xml -o optimal_lights.add.xml --verbose
 ```
+
+```xml
+<!-- in optimal_lights.add.xml-->
+<?xml version="1.0" encoding="UTF-8"?>
+<additional>
+    <tlLogic id="C" type="static" programID="a" offset="0">
+        
+        <!-- West-East-->
+        <phase duration="21" state="rrrGGgrrrGGg"/>
+        <phase duration="3" state="rrryygrrryyg"/>
+        <phase duration="9" state="rrrrrGrrrrrG"/>
+        <phase duration="3" state="rrrrryrrrrry"/>
+        
+        <!-- North-South-->
+        <phase duration="15" state="GGgrrrGGgrrr"/>
+        <phase duration="3" state="yygrrryygrrr"/>
+        <phase duration="5" state="rrGrrrrrGrrr"/>
+        <phase duration="3" state="rryrrrrryrrr"/>
+    </tlLogic>
+</additional>
+```
+
+As you can see, the cycle time got shorter especially on the North-South direction. Also left turning phase of the West-East is almost twice longer than in North-South, which make sense given the biggest left turning demand comes from cars travelling between `fromA1` and  `toB2` edges. Lets preview the results:
+
+```
+sumo-gui -n network.net.xml -r demands.rou.xml -a optimal_lights.add.xml 
+```
+
+![](doc/with_sumo_tls_optimized.gif)
+
+### Comparing results
+
+To compare the 2 controllers we will use [`tripStatistics.py`](https://sumo.dlr.de/docs/Tools/Output.html#tripstatisticspy) tool. First, we need to generate a tripinfo output from our simulation. Tripinfo describes simulated vehicles trip including start and finish times, delay, number of stops. etc. We can generate the output adding `--tripinfo-output` flag, and running SUMO without the user interface since we have already seen the visuals.
+
+```
+sumo -n network.net.xml -r vehicle_demands.rou.xml --tripinfo-output base_tripinfo.xml
+
+sumo -n network.net.xml -r vehicle_demands.rou.xml -a optimal_lights.add.xml --tripinfo-output optimal_tripinfo.xml
+```
+
+Now we can use `tripStatistics.py` to summarize all vehicle trips and compare them. 
+Windows:
+```
+python %SUMO_HOME%\\tools\\output\\tripStatistics.py my_tripinfo.xml
+```
+
+Linux / macOS:
+```
+python $SUMO_HOME/tools/output/tripStatistics.py my_tripinfo.xml
+```
+
 
 
 ### Part 2:

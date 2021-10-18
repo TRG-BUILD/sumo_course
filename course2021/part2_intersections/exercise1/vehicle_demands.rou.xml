@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- generated on Mon Oct 18 14:08:09 2021 by Eclipse SUMO duarouter Version v1_7_0+1095-7111e26d53
+<!-- generated on Mon Oct 18 14:36:18 2021 by Eclipse SUMO duarouter Version v1_7_0+1095-7111e26d53
 <configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/duarouterConfiguration.xsd">
 
     <input>
@@ -12,6 +12,10 @@
         <output-file value="vehicle_demands.rou.xml"/>
         <alternatives-output value="vehicle_demands.rou.alt.xml"/>
     </output>
+
+    <report>
+        <no-step-log value="true"/>
+    </report>
 
 </configuration>
 -->

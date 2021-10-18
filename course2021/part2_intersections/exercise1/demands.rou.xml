@@ -53,4 +53,26 @@
     <route edges="fromB2 fromB22 toB1" id="B2forward"/>
     <route edges="fromB2 fromB22 toA11 toA1" id="B2left"/>
     <route edges="fromB2 fromB22 toA22 toA2" id="B2right"/>
+
+    <vTypeDistribution id="dvehicles">
+        <vType id="type1" accel="1.8" length="4" maxSpeed="50" color="1,1,0" probability="0.3"/>
+        <vType id="type2" accel="2.5" length="5" maxSpeed="60" color="1,0,1" probability="0.5"/>
+        <vType id="type3" accel="1.0" length="6" maxSpeed="40" color="0,1,1" probability="0.2"/>
+    </vTypeDistribution>
+    
+    <flow id="fA1left" type="dvehicles" begin="0" end= "3600" vehsPerHour="175" route="A1left"/>
+    <flow id="fA1forward" type="dvehicles" begin="0" end= "3600" vehsPerHour="725" route="A1forward"/>
+    <flow id="fA1right" type="dvehicles" begin="0" end= "3600" vehsPerHour="106" route="A1right"/>
+
+    <flow id="fB1left" type="dvehicles" begin="0" end= "3600" vehsPerHour="100" route="B1left"/>
+    <flow id="fB1forward" type="dvehicles" begin="0" end= "3600" vehsPerHour="475" route="B1forward"/>
+    <flow id="fB1right" type="dvehicles" begin="0" end= "3600" vehsPerHour="125" route="B1right"/>
+
+    <flow id="fA2left" type="dvehicles" begin="0" end= "3600" vehsPerHour="17" route="A2left"/>
+    <flow id="fA2forward" type="dvehicles" begin="0" end= "3600" vehsPerHour="497" route="A2forward"/>
+    <flow id="fA2right" type="dvehicles" begin="0" end= "3600" vehsPerHour="253" route="A2right"/>
+
+    <flow id="fB2left" type="dvehicles" begin="0" end= "3600" vehsPerHour="70" route="B2left"/>
+    <flow id="fB2forward" type="dvehicles" begin="0" end= "3600" vehsPerHour="330" route="B2forward"/>
+    <flow id="fB2right" type="dvehicles" begin="0" end= "3600" vehsPerHour="30" route="B2right"/>
 </routes>

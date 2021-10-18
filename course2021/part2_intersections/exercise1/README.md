@@ -67,22 +67,68 @@ Now our custom vehicle type `dvehicles` can be used as a `type` parameter to the
 ```xml
 <!-- in demands.rou.xml -->
 ...
-    <flow id="fA1left" type="dvehicles" begin="0" end= "3600" vehsPerHour="175" route="A1left">
-    <flow id="fA1forward" type="dvehicles" begin="0" end= "3600" vehsPerHour="725" route="A1forward">
-    <flow id="fA1right" type="dvehicles" begin="0" end= "3600" vehsPerHour="106" route="A1right">
+    <flow id="fA1left" type="dvehicles" begin="0" end= "3600" vehsPerHour="175" route="A1left"/>
+    <flow id="fA1forward" type="dvehicles" begin="0" end= "3600" vehsPerHour="725" route="A1forward"/>
+    <flow id="fA1right" type="dvehicles" begin="0" end= "3600" vehsPerHour="106" route="A1right"/>
 
-    <flow id="fB1left" type="dvehicles" begin="0" end= "3600" vehsPerHour="100" route="B1left">
-    <flow id="fB1forward" type="dvehicles" begin="0" end= "3600" vehsPerHour="475" route="B1forward">
-    <flow id="fB1right" type="dvehicles" begin="0" end= "3600" vehsPerHour="125" route="B1right">
+    <flow id="fB1left" type="dvehicles" begin="0" end= "3600" vehsPerHour="100" route="B1left"/>
+    <flow id="fB1forward" type="dvehicles" begin="0" end= "3600" vehsPerHour="475" route="B1forward"/>
+    <flow id="fB1right" type="dvehicles" begin="0" end= "3600" vehsPerHour="125" route="B1right"/>
 
-    <flow id="fA2left" type="dvehicles" begin="0" end= "3600" vehsPerHour="17" route="A2left">
-    <flow id="fA2forward" type="dvehicles" begin="0" end= "3600" vehsPerHour="497" route="A2forward">
-    <flow id="fA2right" type="dvehicles" begin="0" end= "3600" vehsPerHour="253" route="A2right">
+    <flow id="fA2left" type="dvehicles" begin="0" end= "3600" vehsPerHour="17" route="A2left"/>
+    <flow id="fA2forward" type="dvehicles" begin="0" end= "3600" vehsPerHour="497" route="A2forward"/>
+    <flow id="fA2right" type="dvehicles" begin="0" end= "3600" vehsPerHour="253" route="A2right"/>
 
-    <flow id="fB2left" type="dvehicles" begin="0" end= "3600" vehsPerHour="70" route="B2left">
-    <flow id="fB2forward" type="dvehicles" begin="0" end= "3600" vehsPerHour="330" route="B2forward">
-    <flow id="fB2right" type="dvehicles" begin="0" end= "3600" vehsPerHour="30" route="B2right">
+    <flow id="fB2left" type="dvehicles" begin="0" end= "3600" vehsPerHour="70" route="B2left"/>
+    <flow id="fB2forward" type="dvehicles" begin="0" end= "3600" vehsPerHour="330" route="B2forward"/>
+    <flow id="fB2right" type="dvehicles" begin="0" end= "3600" vehsPerHour="30" route="B2right"/>
 ```
+
+Simulating the intersection with given demands shows that the organization of traffic with signalized intersection is absolutely necessary.
+
+![](doc/without_sumo_tls.gif)
+
+### Traffic light generation
+Traffic lights can be generated in `netedit` by pressing on Traffic Light mode in Network mode, selecting a junction and pressing Create. For our network `netedit` automaticaly came up with the following phases that can be saved and viewed as separate phase using File -> Traffic Lights -> Save TLS Programs as:
+
+```xml
+<!-- in lights.add.xml -->
+<additionals>
+    <tlLogic id="C" type="static" programID="0" offset="0">
+        <phase duration="33" state="rrrGGgrrrGGg"/>
+        <phase duration="3"  state="rrryygrrryyg"/>
+        <phase duration="6"  state="rrrrrGrrrrrG"/>
+        <phase duration="3"  state="rrrrryrrrrry"/>
+
+        <phase duration="33" state="GGgrrrGGgrrr"/>
+        <phase duration="3"  state="yygrrryygrrr"/>
+        <phase duration="6"  state="rrGrrrrrGrrr"/>
+        <phase duration="3"  state="rryrrrrryrrr"/>
+    </tlLogic>
+</additionals>
+
+We can see that for each direction we have all maneuvers phase and left turn phase with transition phases inbetween.
+```
+![](doc/with_sumo_tls.gif)
+
+Lets try to use one of the SUMO python tools `tlsCycleAdaptation.py` to optimize the phase times accrding to [this doc](https://sumo.dlr.de/docs/Tools/tls.html#tlscycleadaptationpy).
+
+Unlike our shorthand demand definitions `flow` and `trip` from [this doc](https://sumo.dlr.de/docs/Demand/Shortest_or_Optimal_Path_Routing.html) the tool description says that it only supports full demand definition of de the type `vehicle`. We will use `duarouter` that performs [Dynamic User Assignment](https://sumo.dlr.de/docs/Demand/Dynamic_User_Assignment.html) to obtain the correct demand format.
+
+```sh
+duarouter --route-files demands.rou.xml --net-file network.net.xml --output-file vehicle_demands.rou.xml
+```
+
+Windows:
+```sh
+python "%SUMO_HOME%\\tools\\tlsCycleAdaptation.py" -n network3.net.xml -r routes.rou.xml -o new_tls.add.xml --verbose
+```
+
+Linux:
+```sh
+python $SUMO_HOME/tools/tlsCycleAdaptation.py -n network3.net.xml -r routes.rou.xml -o newTLS.add.xml --verbose
+```
+
 
 ### Part 2:
 - Model another similar intersection on the western approach 400 meters away

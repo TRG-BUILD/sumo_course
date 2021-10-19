@@ -1,0 +1,11 @@
+average vehicular travel time(s) = the sum of all vehicular travel times / the number of vehicles
+average vehicular travel length(m) = the sum of all vehicular travel lengths / the number of vehicles
+average vehicular travel speed(m/s) = the sum of all vehicular travel speeds / the number of vehicles
+
+Assignment Method:optimal2_tripinfo.xml
+- total number of vehicles:2908.0
+- total departure delay(s):1647409.4399999997, - average departure delay(s):566.5094360385143
+- total waiting time(s):1746612.4400000004, - average vehicular waiting time(s):600.6232599724898
+- total travel time(s):158897.0, - average vehicular travel time(s):54.64133425034388
+- total travel length(m):344148.01999999804, - average vehicular travel length(m):118.34526134800483
+- average vehicular travel speed(m/s):3.3817053633377228

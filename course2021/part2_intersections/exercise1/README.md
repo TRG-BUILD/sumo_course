@@ -175,6 +175,8 @@ python $SUMO_HOME/tools/tlsCycleAdaptation.py -n network.net.xml -r vehicle_dema
 
 As you can see, the cycle time got shorter especially on the North-South direction. Also left turning phase of the West-East is almost twice longer than in North-South, which make sense given the biggest left turning demand comes from cars travelling between `fromA1` and  `toB2` edges. Lets preview the results:
 
+Notice the cycle time has changed without changing the all red and transition times. What could it potentially lead to?
+
 ```
 sumo-gui -n network.net.xml -r demands.rou.xml -a optimal_lights.add.xml 
 ```
@@ -185,24 +187,42 @@ sumo-gui -n network.net.xml -r demands.rou.xml -a optimal_lights.add.xml
 
 To compare the 2 controllers we will use [`tripStatistics.py`](https://sumo.dlr.de/docs/Tools/Output.html#tripstatisticspy) tool. First, we need to generate a tripinfo output from our simulation. Tripinfo describes simulated vehicles trip including start and finish times, delay, number of stops. etc. We can generate the output adding `--tripinfo-output` flag, and running SUMO without the user interface since we have already seen the visuals.
 
-```
+```sh
+# original SUMO pre-timed plan
 sumo -n network.net.xml -r vehicle_demands.rou.xml --tripinfo-output base_tripinfo.xml
 
+# optimized SUMO pre-timed plan
 sumo -n network.net.xml -r vehicle_demands.rou.xml -a optimal_lights.add.xml --tripinfo-output optimal_tripinfo.xml
+
+# optimized SUMO pre-timed plan
+sumo -n network.net.xml -r vehicle_demands.rou.xml -a solution_lights.add.xml --tripinfo-output solution_tripinfo.xml
 ```
 
 Now we can use `tripStatistics.py` to summarize all vehicle trips and compare them. 
 Windows:
-```
-python %SUMO_HOME%\\tools\\output\\tripStatistics.py my_tripinfo.xml
+```sh
+python "%SUMO_HOME%\\tools\\output\\tripStatistics.py" -t base_tripinfo.xml -o base_summary.txt
+
+python "%SUMO_HOME%\\tools\\output\\tripStatistics.py" -t optimal_tripinfo.xml -o optimal_summary.txt
+
+python "%SUMO_HOME%\\tools\\output\\tripStatistics.py" -t solution_tripinfo.xml -o solution_summary.txt
 ```
 
 Linux / macOS:
-```
-python $SUMO_HOME/tools/output/tripStatistics.py my_tripinfo.xml
+```sh
+python $SUMO_HOME/tools/output/tripStatistics.py -t base_tripinfo.xml -o base_summary.txt
+
+python $SUMO_HOME/tools/output/tripStatistics.py -t optimal_tripinfo.xml -o optimal_summary.txt
+
+python $SUMO_HOME/tools/output/tripStatistics.py -t solution_tripinfo.xml -o solution_summary.txt
 ```
 
-
+| Metric | SUMO (proposed) | SUMO (optimized) | Manual solution |
+|---|---|-----|---|
+| Average departure delay (s) | 394.6 | 614.2 | 244.0 |
+| Average waiting time (s)    | 424.0 | 648.4 | 269.7 |
+| Average travel time (s)     | 49.7  | 56.5  | 48.1  |
+| Average travel speed (m/s)  | 3.7   | 2.6   | 3.6   |
 
 ### Part 2:
 - Model another similar intersection on the western approach 400 meters away

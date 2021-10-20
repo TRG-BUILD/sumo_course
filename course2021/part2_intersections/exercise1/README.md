@@ -18,18 +18,40 @@ New approximate dimensions are then calculated as follows:
 
 `new_width = (4.0 + 3.0 + 3.5) / 7.73 * 100 = 136 m`
 
+Given the correct scale lets outline the network first without worrying to much about the correct size. Here i just pay attention to placing nodes approximately where a change in geometry happens.
+
+![](doc/step1.png)
+
+With basic geometry covered, lets add correct number of lanes and lane widths.
+
+![](doc/step2.png)
+
+Next i will use the Move mode to allign the network well with the background image. Im moving nodes around and also adding offsets with Shift + Left Click similar to lecture 1 exercise 2.
+
+![](doc/step3.png)
+
+When we are happy with the allignment we can add a traffic light using Traffic Light mode, clicking on the middle node and clicking Create.
+
+![](doc/step4.png)
+
+Final step before adding the demands is to come up with meaningful names for the nodes and edges. For example:
+
+![](doc/step5.png)
 
 ### Demand generation
-
-Difference between route defined and created route displays
+From each origin lets generate a route forward to the left and to the right. Route generation can be done in `nededit` by going to Demand Mode -> Route Mode and selecting edges belonging to the route.
 
 ![](doc/route_definition.png)
 
+There is an often confusing difference between the route shape when you define a route and when the route has been created. Next picture suggests that the route starts from the right turnung lane and a vehicle will make an illegal left turn from there. This is not true and is mostly a visualization issue because `netedit` snaps the route line to the origin of the start edge. Remember that route are defined between edges, and its a job of a simulator to decide on correct and timely lane switches to follow the route.
+
 ![](doc/created_route.png)
 
-Use `netedit` to define routes, then edit the `*.rou.xml` file to add `flow` with `vehPerHour` parameter according to [this doc]().
+Finishing all the routes looks as follows:
 
-resulting `demands.rou.xml` file content is shown below. For better readablity the xml schema verification header and the route color property were ommited.
+![](doc/all_routes.png)
+
+We will continue with the flows outside of `netedit` by saving `demands.rou.xml` demnad file and editing it to add `flow` with `vehPerHour` parameter according to [this doc](https://sumo.dlr.de/docs/Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes.html#repeated_vehicles_flows). The resulting file content is shown below. For better readablity the xml schema verification header and the route color property were ommited.
 ```xml
 <routes>
 <!-- in demands.rou.xml -->
@@ -113,6 +135,7 @@ We can see that for each direction we have all maneuvers phase and left turn pha
 ```
 ![](doc/with_sumo_tls.gif)
 
+### Traffic plan optimization
 Lets try to use one of the SUMO python tools `tlsCycleAdaptation.py` to optimize the phase times accrding to [this doc](https://sumo.dlr.de/docs/Tools/tls.html#tlscycleadaptationpy). Unlike our shorthand demand definitions `flow` and `trip` from [this doc](https://sumo.dlr.de/docs/Demand/Shortest_or_Optimal_Path_Routing.html) the tool description says that it only supports full demand definition of de the type `vehicle`. We will use `duarouter` that performs [Dynamic User Assignment](https://sumo.dlr.de/docs/Demand/Dynamic_User_Assignment.html) to obtain the correct demand format.
 
 ```sh
@@ -183,9 +206,38 @@ sumo-gui -n network.net.xml -r demands.rou.xml -a optimal_lights.add.xml
 
 ![](doc/with_sumo_tls_optimized.gif)
 
+In addition to that let us model the provided solution signal plan. The plan does not have left turns and its `tlLogic` will look as follows:
+
+### Solution signal plan
+
+```xml
+<additionals>
+<!-- in solution_lights.add.xml-->
+    <tlLogic id="C" type="static" programID="1" offset="0">
+
+        <!-- West-East-->
+        <phase duration="28" state="rrrGGgrrrGGg"/>
+        <phase duration="4"  state="rrryyyrrryyy"/>
+        <phase duration="1"  state="yyyrrryyyrrr"/>
+
+        <!-- North-South-->
+        <phase duration="19" state="GGgrrrGGgrrr"/>
+        <phase duration="4"  state="yyyrrryyyrrr"/>
+        <phase duration="3"  state="rrrrrrrrrrrr"/>
+        <phase duration="1"  state="rrryyyrrryyy"/>
+    </tlLogic>
+</additionals>
+```
+
+```sh
+sumo-gui -n network.net.xml -r demands.rou.xml -a solution_lights.add.xml 
+```
+
+![](doc/with_solution_tls.gif)
+
 ### Comparing results
 
-To compare the 2 controllers we will use [`tripStatistics.py`](https://sumo.dlr.de/docs/Tools/Output.html#tripstatisticspy) tool. First, we need to generate a tripinfo output from our simulation. Tripinfo describes simulated vehicles trip including start and finish times, delay, number of stops. etc. We can generate the output adding `--tripinfo-output` flag, and running SUMO without the user interface since we have already seen the visuals.
+To compare the 2 SUMO signal plans and the solution plan we will use [`tripStatistics.py`](https://sumo.dlr.de/docs/Tools/Output.html#tripstatisticspy) tool. First, we need to generate a tripinfo output from our simulation. Tripinfo describes simulated vehicles trip including start and finish times, delay, number of stops. etc. We can generate the output adding `--tripinfo-output` flag, and running SUMO without the user interface since we have already seen the visuals.
 
 ```sh
 # original SUMO pre-timed plan
@@ -194,7 +246,7 @@ sumo -n network.net.xml -r vehicle_demands.rou.xml --tripinfo-output base_tripin
 # optimized SUMO pre-timed plan
 sumo -n network.net.xml -r vehicle_demands.rou.xml -a optimal_lights.add.xml --tripinfo-output optimal_tripinfo.xml
 
-# optimized SUMO pre-timed plan
+# pre-timed plan from exercise solution
 sumo -n network.net.xml -r vehicle_demands.rou.xml -a solution_lights.add.xml --tripinfo-output solution_tripinfo.xml
 ```
 
@@ -219,10 +271,11 @@ python $SUMO_HOME/tools/output/tripStatistics.py -t solution_tripinfo.xml -o sol
 
 | Metric | SUMO (proposed) | SUMO (optimized) | Manual solution |
 |---|---|-----|---|
-| Average departure delay (s) | 394.6 | 614.2 | 244.0 |
 | Average waiting time (s)    | 424.0 | 648.4 | 269.7 |
 | Average travel time (s)     | 49.7  | 56.5  | 48.1  |
 | Average travel speed (m/s)  | 3.7   | 2.6   | 3.6   |
+
+As you see the solution plan without left turns is sifnificantly better in all but average travel speed metric. This is because by default SUMO will always add a left turning phase if the left turning connection exists. This will happen regardless of whether the volume of left turns requires having a dedicated phase. As to the optimization with `tlsCycleAdaptation.py` we simply asked SUMO to improve the phase durations and not the phase sequence, so SUMO was not responsble for suggesting a better phase sequence.
 
 ### Part 2:
 - Model another similar intersection on the western approach 400 meters away
@@ -230,7 +283,95 @@ python $SUMO_HOME/tools/output/tripStatistics.py -t solution_tripinfo.xml -o sol
 - Experiment with simulating different coordination offsets manually
 - Calculate optimal coordination offset with https://sumo.dlr.de/docs/Tools/tls.html#tlscoordinatorpy 
 
- 
+### Extending the network
+Unfortunately for us `netedit` does not provide good shortcuts for extending the network like copy / paste / mirror operations you are familiar with from say AutoCAD. Lets extend our network to the west in an arbirary way.
+
+![](doc/arbitrary_extension.png)
+
+Lets continue by tweaking the gemetry using the move operations and offsets (Shift + Left Click). We will also add a traffic light and customize the names similarly to the previous part in order to assign the demands.
+
+![](doc/extended_names.png)
+
+### Demand generation
+
+Lets generate the demand using `randomTrips.py` and use `--fringe-factor` parameter according to [this doc](https://sumo.dlr.de/docs/Tools/Trip.html#edge_probabilities). We will also weight the edges with more lanes using `-L` parameters and `--remove-loops` to disallow re-entering the network from outgoing edges. The perioid `-p` is chosen to be every 2 seconds, however, depending on the routing some impossible trips will be thrown away and actual period will be lower. We will also use `-r` output flag to get our demand in `vehicle` / `route` format rather than `trip` or `flow`. This way we dont have to call `duarouter` for conversion as before.
+
+Windows:
+```sh
+python "%SUMO_HOME%/tools/randomTrips.py" -n extended_network.net.xml -r extended_routes.rou.xml --fringe-factor 10 -L --remove-loops -p 2
+```
+
+Linux / macOS:
+```sh
+python $SUMO_HOME/tools/randomTrips.py -n extended_network.net.xml -r extended_routes.rou.xml --fringe-factor 10 -L --remove-loops -p 2
+```
+
+Simulate the results:
+
+```xml
+sumo-gui -n extended_network.net.xml -r extended_routes.rou.xml
+```
+
+![](doc/simple_coordination.gif)
+
+### Coordination
+
+Lets optimize the coordination offset between the intersections D and C and see whether it leads to any imporvements. We will use `tlsCoordinator.py` from [this doc](https://sumo.dlr.de/docs/Tools/tls.html#tlscoordinatorpy)
+
+Windows:
+```sh
+python "%SUMO_HOME%\\tools\\tlsCoordinator.py" -n extended_network.net.xml -r extended_routes.rou.xml -o D_C_offset.add.xml
+```
+
+Linux / macOS:
+```sh
+python $SUMO_HOME/tools/tlsCoordinator.py -n extended_network.net.xml -r extended_routes.rou.xml -o D_C_offset.add.xml
+```
+
+As a result we obtained the file with following content:
+```xml
+<additional>
+    <!-- in D_C_offset.add.xml-->
+    <tlLogic id="C" programID="0" offset="0.00"/>
+    <tlLogic id="D" programID="1" offset="51.68"/>
+</additional>
+```
+
+### Results
+
+Lets generate a `tripinfo` from base and optimal coordination. Remember to add the `D_C_offset.add.xml` additional file to the second simulation:
+
+```sh
+# original SUMO coordination
+sumo -n extended_network.net.xml -r extended_routes.rou.xml --tripinfo-output base_extended_tripinfo.xml
+
+# optimized SUMO coordination
+sumo -n extended_network.net.xml -r extended_routes.rou.xml -a D_C_offset.add.xml --tripinfo-output optimal_extended_tripinfo.xml
+```
+
+Now we can use `tripStatistics.py` to summarize all vehicle trips and compare them. 
+
+Windows:
+```sh
+python "%SUMO_HOME%\\tools\\output\\tripStatistics.py" -t base_extended_tripinfo.xml -o base_extended_summary.txt
+
+python "%SUMO_HOME%\\tools\\output\\tripStatistics.py" -t optimal_extended_tripinfo.xml -o optimal_extended_summary.txt
+```
+
+Linux / macOS:
+```sh
+python $SUMO_HOME/tools/output/tripStatistics.py -t base_extended_tripinfo.xml -o base_extended_summary.txt
+
+python $SUMO_HOME/tools/output/tripStatistics.py -t optimal_extended_tripinfo.xml -o optimal_extended_summary.txt
+```
+
+| Metric | base | optimized |
+|---|---|-----|
+| Average waiting time (s)    | 24.1  | 23.9  |
+| Average travel time (s)     | 48.5  | 47.4  |
+| Average travel speed (m/s)  | 4.8   | 4.8   |
+
+We can obeserve some, but insignificant, improvement which suggests that for this traffic volume the coordination is likely not beneficial to optimize, and we should search for improvement somewhere else, for example improving the delay of individual intersections by phase selection or responsive / adaptive traffic control.
 
 ## Exercise 2
 Using the intersection from Exercise 1 part 1:
@@ -238,6 +379,104 @@ Using the intersection from Exercise 1 part 1:
 - Change the controller to the time loss based and output trip info
 - Compare them to the results pre-timed control. 
 
+Lets consider a solution signal plan without left turn and extend its definition with [time gap](https://sumo.dlr.de/docs/Simulation/Traffic_Lights.html#based_on_time_gaps) and [delay based](https://sumo.dlr.de/docs/Simulation/Traffic_Lights.html#based_on_time_loss) control.
+
+### Time gap controller
+Lets create a new file `time_gap_solution_lights.add.xml` with following content:
+
+```xml
+<additionals>
+    <!-- time_gap_solution_lights.add.xml -->
+    <tlLogic id="C" type="actuated" programID="1" offset="0">
+        <param key="max-gap" value="3.0"/>
+        <param key="detector-gap" value="1.5"/>
+        <param key="show-detectors" value="true"/>
+
+        <phase duration="28" minDur="15" maxDur="40" state="rrrGGgrrrGGg"/>
+        <phase duration="4"  state="rrryyyrrryyy"/>
+        <phase duration="1"  state="yyyrrryyyrrr"/>
+        <phase duration="19" minDur="15" maxDur="40" state="GGgrrrGGgrrr"/>
+        <phase duration="4"  state="yyyrrryyyrrr"/>
+        <phase duration="3"  state="rrrrrrrrrrrr"/>
+        <phase duration="1"  state="rrryyyrrryyy"/>
+    </tlLogic>
+</additionals>
+```
+
+Notice `actuated` type as well as `max-gap` and `detector-gap` parameters to describe when the detector no longer _sees_ a queue and how far the detector is from the intersection (in seconds). For the onyl 2 non-transitional phases we will add a minimum and maximum phase duration arbitrarily between 15 and 40 seconds.
+
+```sh
+sumo-gui -n network.net.xml -r vehicle_demands.rou.xml -a time_gap_solution_lights.add.xml 
+```
+
+![](doc/time_gap_tls.gif)
+
+### Delay based controller
+
+Lets create a new file `delay_based_solution_lights.add.xml` with following content:
+
+```xml
+<additionals>
+    <!-- delay_based_solution_lights.add.xml -->
+    <tlLogic id="C" type="delay_based" programID="1" offset="0">
+        <param key="detectorRange" value="25"/>
+        <param key="minTimeLoss" value="1" />
+        <param key="show-detectors" value="true"/>
+
+        <phase duration="28" minDur="15" maxDur="40" state="rrrGGgrrrGGg"/>
+        <phase duration="4"  state="rrryyyrrryyy"/>
+        <phase duration="1"  state="yyyrrryyyrrr"/>
+        <phase duration="19" minDur="15" maxDur="40" state="GGgrrrGGgrrr"/>
+        <phase duration="4"  state="yyyrrryyyrrr"/>
+        <phase duration="3"  state="rrrrrrrrrrrr"/>
+        <phase duration="1"  state="rrryyyrrryyy"/>
+    </tlLogic>
+</additionals>
+```
+
+Notice `delay_based` type as well as `detectorRange` and `minTimeLoss` parameters to describe detector length and a critical accumulated delay time after which detector requests extension of the phase. For the onyl 2 non-transitional phases we will add a minimum and maximum phase duration arbitrarily between 15 and 40 seconds.
+
+```sh
+sumo-gui -n network.net.xml -r vehicle_demands.rou.xml -a delay_based_solution_lights.add.xml 
+```
+
+![](doc/delay_based_tls.gif)
+
+### Results
+
+Lets generate a `tripinfo` from both time-gap and delay based controllers. Remember to add the appropriate `*.add.xml` additional file to the simulations:
+
+```sh
+# time-gap control
+sumo -n network.net.xml -r vehicle_demands.rou.xml -a time_gap_solution_lights.add.xml --tripinfo-output time_gap_tripinfo.xml
+
+# delay based control
+sumo -n network.net.xml -r vehicle_demands.rou.xml -a delay_based_solution_lights.add.xml --tripinfo-output delay_based_tripinfo.xml
+```
+
+Now we can use `tripStatistics.py` to summarize all vehicle trips and compare them. 
+
+Windows:
+```sh
+python "%SUMO_HOME%\\tools\\output\\tripStatistics.py" -t time_gap_tripinfo.xml -o time_gap_summary.txt
+
+python "%SUMO_HOME%\\tools\\output\\tripStatistics.py" -t delay_based_tripinfo.xml -o delay_based_summary.txt
+```
+
+Linux / macOS:
+```sh
+python $SUMO_HOME/tools/output/tripStatistics.py -t time_gap_tripinfo.xml -o time_gap_summary.txt
+
+python $SUMO_HOME/tools/output/tripStatistics.py -t delay_based_tripinfo.xml -o delay_based_summary.txt
+```
+
+| Metric | SUMO (proposed) | SUMO (optimized) | Manual solution | Time-gap actuated | Delay based |
+|---|---|-----|---|---|---|
+| Average waiting time (s)    | 424.0 | 648.4 | **269.7** | 373.9 | 318.5|
+| Average travel time (s)     | 49.7  | 56.5  | **48.1**  | 48.6  | **48.1**|
+| Average travel speed (m/s)  | 3.7   | 2.6   | 3.6   | **4.2**   | 3.9|
+
+As you can see the traffic responsive control let the vehicles pass the intersection faster and gave similar travel times even though the waiting times were bigger. Bear in mind that we have not tuned any of the detector parameters to optimize the controller. In addition, it seems that the pre-timed solution fits well to the demand we have generated, namely, a steady, dense, uniform flow of vehicles. A more non-steady flow would very likely be better tackled by the traffic responsive control or more advanced traffic adaptive controllers.
 
 
 

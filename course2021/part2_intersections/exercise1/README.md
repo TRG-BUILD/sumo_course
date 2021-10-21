@@ -1,14 +1,13 @@
-## Exercises 1
-### Part 1
-- Model an intersection from an assignment with Rasmus
-- Generate corresponding demands
+## Exercises 1 
+## Part 1
+- Model an intersection from Exercise 1 TT-5 and generate corresponding demands
 - Visualize how the intersection functions without TLS
 - Add a pre-timed TLS to the intersection with your phase and durations times and generate `tripinfo` type output
 - Calculate pre-timed TLS with SUMO optimization using https://sumo.dlr.de/docs/Tools/tls.html#tlscycleadaptationpy 
 - Compare those 2 scenarios using the trip statistics tool https://sumo.dlr.de/docs/Tools/Output.html#tripstatisticspy
 
 ### Part 1 modelling te network
-Lets model the network in `netedit` using a background image similar to lecture 1 exercise 2. On upload the image dimensions will be 100 by 100 meters. Lets use lane width hints in the image to recalculate image dimensions so that we draw in the correct units. To do it lets draw a dummy edge next to the lane width measurements and check what edge`s length.
+Lets model the `network.net.xml` in `netedit` using a background image similar to lecture 1 exercise 2. On upload the image dimensions will be 100 by 100 meters. Lets use lane width hints in the image to recalculate image dimensions so that we draw in the correct units. To do it lets draw a dummy edge next to the lane width measurements and check what edge`s length.
 
 ![](doc/howtomeasure.png)
 
@@ -22,24 +21,20 @@ Given the correct scale lets outline the network first without worrying to much 
 
 ![](doc/step1.png)
 
-With basic geometry covered, lets add correct number of lanes and lane widths.
+With the basic geometry covered, lets add correct number of lanes and set lane widths described in the image.
 
 ![](doc/step2.png)
 
-Next i will use the Move mode to allign the network well with the background image. Im moving nodes around and also adding offsets with Shift + Left Click similar to lecture 1 exercise 2.
+Next we will use the Move mode to allign the network well with the background image. Move nodes around and add offsets with Shift + Left Click similar to lecture 1 exercise 2 until you are satisfied with the result.
 
 ![](doc/step3.png)
-
-When we are happy with the allignment we can add a traffic light using Traffic Light mode, clicking on the middle node and clicking Create.
-
-![](doc/step4.png)
 
 Final step before adding the demands is to come up with meaningful names for the nodes and edges. For example:
 
 ![](doc/step5.png)
 
 ### Demand generation
-From each origin lets generate a route forward to the left and to the right. Route generation can be done in `nededit` by going to Demand Mode -> Route Mode and selecting edges belonging to the route.
+From each origin lets generate 3 routes - forward, to the left and to the right. Route generation can be done in `nededit` by going to Demand Mode -> Route Mode and selecting edges belonging to the route.
 
 ![](doc/route_definition.png)
 
@@ -51,7 +46,7 @@ Finishing all the routes looks as follows:
 
 ![](doc/all_routes.png)
 
-We will continue with the flows outside of `netedit` by saving `demands.rou.xml` demnad file and editing it to add `flow` with `vehPerHour` parameter according to [this doc](https://sumo.dlr.de/docs/Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes.html#repeated_vehicles_flows). The resulting file content is shown below. For better readablity the xml schema verification header and the route color property were ommited.
+We will continue with the flows outside of `netedit` by saving `demands.rou.xml` demnad file and editing it to add `flow` with `vehsPerHour` parameter according to [this doc](https://sumo.dlr.de/docs/Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes.html#repeated_vehicles_flows). The resulting file content is shown below. For better readablity the xml schema verification header and the route color property were ommited.
 ```xml
 <routes>
 <!-- in demands.rou.xml -->
@@ -70,7 +65,7 @@ We will continue with the flows outside of `netedit` by saving `demands.rou.xml`
 </routes>
 ```
 
-Now we can add a `vType` and `flow` definitions between `<routes> <\routes>` tags. Up until now we have used a static `vType` and all vehicles had the same characteristics, to come closer to modelling real traffic flow we can use vehicle distributions according to [this doc](https://sumo.dlr.de/docs/Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes.html#route_and_vehicle_type_distributions)
+Now we can add a `vType` and `flow` definitions between `<routes> <\routes>` tags. Up until now we have used a static `vType` and all vehicles had the same characteristics, to come closer to modelling real traffic flow lets experiment with vehicle distributions according to [this doc](https://sumo.dlr.de/docs/Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes.html#route_and_vehicle_type_distributions).
 
 ```xml
 <!-- in demands.rou.xml -->
@@ -111,7 +106,11 @@ Simulating the intersection with given demands shows that the organization of tr
 ![](doc/without_sumo_tls.gif)
 
 ### Traffic light generation
-Traffic lights can be generated in `netedit` by pressing on Traffic Light mode in Network mode, selecting a junction and pressing Create. For our network `netedit` automaticaly came up with the following phases that can be saved and viewed as separate phase using File -> Traffic Lights -> Save TLS Programs as:
+Traffic lights can be generated in `netedit` by pressing on Traffic Light mode in Network mode, selecting a junction and pressing Create. 
+
+![](doc/step4.png)
+
+For our network `netedit` automaticaly came up with the following phases that can be saved to `lights.add.xml` and then viewed using File -> Traffic Lights -> Save TLS Programs as:
 
 ```xml
 <!-- in lights.add.xml -->
@@ -131,7 +130,7 @@ Traffic lights can be generated in `netedit` by pressing on Traffic Light mode i
     </tlLogic>
 </additionals>
 
-We can see that for each direction we have all maneuvers phase and left turn phase with transition phases inbetween.
+We can see that for each direction we have a phase with all maneuvers, left turn phase plus transition phases inbetween.
 ```
 ![](doc/with_sumo_tls.gif)
 
@@ -196,9 +195,7 @@ python $SUMO_HOME/tools/tlsCycleAdaptation.py -n network.net.xml -r vehicle_dema
 </additional>
 ```
 
-As you can see, the cycle time got shorter especially on the North-South direction. Also left turning phase of the West-East is almost twice longer than in North-South, which make sense given the biggest left turning demand comes from cars travelling between `fromA1` and  `toB2` edges. Lets preview the results:
-
-Notice the cycle time has changed without changing the all red and transition times. What could it potentially lead to?
+As you can see, the cycle time got shorter especially on the North-South direction. Also left turning phase of the West-East is almost twice longer than in North-South, which make sense given the biggest left turning demand comes from cars travelling between `fromA1` and  `toB2` edges. Notice the cycle time has become shorter without changing the all red and transition times. What could it potentially lead to? Lets preview the results: 
 
 ```
 sumo-gui -n network.net.xml -r demands.rou.xml -a optimal_lights.add.xml 
@@ -209,7 +206,7 @@ sumo-gui -n network.net.xml -r demands.rou.xml -a optimal_lights.add.xml
 In addition to that let us model the provided solution signal plan. The plan does not have left turns and its `tlLogic` will look as follows:
 
 ### Solution signal plan
-
+As a solution to TT-5 Exercise 1 the signal plan can be written in SUMO format. This plan does not have a left turning phase. 
 ```xml
 <additionals>
 <!-- in solution_lights.add.xml-->
@@ -237,7 +234,7 @@ sumo-gui -n network.net.xml -r demands.rou.xml -a solution_lights.add.xml
 
 ### Comparing results
 
-To compare the 2 SUMO signal plans and the solution plan we will use [`tripStatistics.py`](https://sumo.dlr.de/docs/Tools/Output.html#tripstatisticspy) tool. First, we need to generate a tripinfo output from our simulation. Tripinfo describes simulated vehicles trip including start and finish times, delay, number of stops. etc. We can generate the output adding `--tripinfo-output` flag, and running SUMO without the user interface since we have already seen the visuals.
+To compare the 2 SUMO signal plans and the solution plan we will use [`tripStatistics.py`](https://sumo.dlr.de/docs/Tools/Output.html#tripstatisticspy) tool. First, we need to generate a `tripinfo` output from our simulation. Tripinfo describes simulated vehicles trip including start and finish times, delay, number of stops. etc. We can generate the output adding `--tripinfo-output` flag, and run `sumo` without the user interface instead of `sumo-gui` to save some time since we have already seen the visuals.
 
 ```sh
 # original SUMO pre-timed plan
@@ -271,17 +268,17 @@ python $SUMO_HOME/tools/output/tripStatistics.py -t solution_tripinfo.xml -o sol
 
 | Metric | SUMO (proposed) | SUMO (optimized) | Manual solution |
 |---|---|-----|---|
-| Average waiting time (s)    | 424.0 | 648.4 | 269.7 |
-| Average travel time (s)     | 49.7  | 56.5  | 48.1  |
-| Average travel speed (m/s)  | 3.7   | 2.6   | 3.6   |
+| Average waiting time (s)    | 424.0 | 648.4 | **269.7** |
+| Average travel time (s)     | 49.7  | 56.5  | **48.1**  |
+| Average travel speed (m/s)  | **3.7**   | 2.6   | 3.6   |
 
-As you see the solution plan without left turns is sifnificantly better in all but average travel speed metric. This is because by default SUMO will always add a left turning phase if the left turning connection exists. This will happen regardless of whether the volume of left turns requires having a dedicated phase. As to the optimization with `tlsCycleAdaptation.py` we simply asked SUMO to improve the phase durations and not the phase sequence, so SUMO was not responsble for suggesting a better phase sequence.
+As you see the solution plan without left turns is better in all but average travel speed metric. This is because by default SUMO will always add a left turning phase if the left turning connection exists. This will happen regardless of whether the volume of left turns requires having a dedicated phase. As to the optimization with `tlsCycleAdaptation.py` we simply asked SUMO to improve the phase durations and not the phase sequence, so SUMO was not responsble for suggesting a better phase sequence.
 
-### Part 2:
-- Model another similar intersection on the western approach 400 meters away
+## Part 2:
+- Model another similar intersection on the western approach
 - Generate new demand that includes western intersection, make sure most of the traffic happens between the intersections
 - Experiment with simulating different coordination offsets manually
-- Calculate optimal coordination offset with https://sumo.dlr.de/docs/Tools/tls.html#tlscoordinatorpy 
+- Calculate optimal coordination offset with [tlsCoordinator.py](https://sumo.dlr.de/docs/Tools/tls.html#tlscoordinatorpy)
 
 ### Extending the network
 Unfortunately for us `netedit` does not provide good shortcuts for extending the network like copy / paste / mirror operations you are familiar with from say AutoCAD. Lets extend our network to the west in an arbirary way.
@@ -294,7 +291,7 @@ Lets continue by tweaking the gemetry using the move operations and offsets (Shi
 
 ### Demand generation
 
-Lets generate the demand using `randomTrips.py` and use `--fringe-factor` parameter according to [this doc](https://sumo.dlr.de/docs/Tools/Trip.html#edge_probabilities). We will also weight the edges with more lanes using `-L` parameters and `--remove-loops` to disallow re-entering the network from outgoing edges. The perioid `-p` is chosen to be every 2 seconds, however, depending on the routing some impossible trips will be thrown away and actual period will be lower. We will also use `-r` output flag to get our demand in `vehicle` / `route` format rather than `trip` or `flow`. This way we dont have to call `duarouter` for conversion as before.
+Lets generate the demand using `randomTrips.py` and use `--fringe-factor` parameter according to [this doc](https://sumo.dlr.de/docs/Tools/Trip.html#edge_probabilities). Fringe factor assign higher probability to the edges at the boundary of the network to be origins or destinations, so all the flow will go through the center of the network. We will also weight the edges with more lanes using `-L` parameters and `--remove-loops` to disallow re-entering the network from outgoing edges. The perioid `-p` is chosen to be every 2 seconds, however, depending on the routing some impossible trips will be thrown away and actual period will be lower. We will also use `-r / --route-file` output flag instead of `-o / --output-trip-file` to get our demand in `vehicle` / `route` format rather than `trip` or `flow`. This way we dont have to call `duarouter` to convert the demands before using the `tlsCoordinator.py` tool.
 
 Windows:
 ```sh
@@ -375,9 +372,9 @@ We can obeserve some, but insignificant, improvement which suggests that for thi
 
 ## Exercise 2
 Using the intersection from Exercise 1 part 1:
-- Change the controller to time-gap based and output trip info
-- Change the controller to the time loss based and output trip info
-- Compare them to the results pre-timed control. 
+- Change the controller to time-gap based and output tripinfo
+- Change the controller to the time loss based and output tripinfo
+- Compare them to the results pre-timed control
 
 Lets consider a solution signal plan without left turn and extend its definition with [time gap](https://sumo.dlr.de/docs/Simulation/Traffic_Lights.html#based_on_time_gaps) and [delay based](https://sumo.dlr.de/docs/Simulation/Traffic_Lights.html#based_on_time_loss) control.
 
@@ -403,7 +400,7 @@ Lets create a new file `time_gap_solution_lights.add.xml` with following content
 </additionals>
 ```
 
-Notice `actuated` type as well as `max-gap` and `detector-gap` parameters to describe when the detector no longer _sees_ a queue and how far the detector is from the intersection (in seconds). For the onyl 2 non-transitional phases we will add a minimum and maximum phase duration arbitrarily between 15 and 40 seconds.
+Notice `actuated` type as well as `max-gap` and `detector-gap` parameters to describe when the detector no longer _sees_ a queue and how far the detector is from the intersection (in seconds). For the onyl 2 non-transitional phases we will add a minimum and maximum phase duration arbitrarily between 15 and 40 seconds. Other phases will follow prescribed duration strictly.
 
 ```sh
 sumo-gui -n network.net.xml -r vehicle_demands.rou.xml -a time_gap_solution_lights.add.xml 
@@ -476,7 +473,7 @@ python $SUMO_HOME/tools/output/tripStatistics.py -t delay_based_tripinfo.xml -o 
 | Average travel time (s)     | 49.7  | 56.5  | **48.1**  | 48.6  | **48.1**|
 | Average travel speed (m/s)  | 3.7   | 2.6   | 3.6   | **4.2**   | 3.9|
 
-As you can see the traffic responsive control let the vehicles pass the intersection faster and gave similar travel times even though the waiting times were bigger. Bear in mind that we have not tuned any of the detector parameters to optimize the controller. In addition, it seems that the pre-timed solution fits well to the demand we have generated, namely, a steady, dense, uniform flow of vehicles. A more non-steady flow would very likely be better tackled by the traffic responsive control or more advanced traffic adaptive controllers.
+As you can see the traffic responsive control lets the vehicles pass the intersection faster and gave similar travel times even though the waiting times were bigger. Bear in mind that we have not tuned any of the detector parameters to optimize the controller. In addition, it seems that the pre-timed solution fits well to the demand we have generated, namely, a steady, dense, uniform flow of vehicles. A more non-steady flow would very likely be better tackled by the traffic responsive control or more advanced traffic adaptive controllers.
 
 
 

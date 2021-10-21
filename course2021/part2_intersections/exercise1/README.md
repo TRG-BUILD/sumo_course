@@ -46,7 +46,7 @@ Finishing all the routes looks as follows:
 
 ![](doc/all_routes.png)
 
-We will continue with the flows outside of `netedit` by saving `demands.rou.xml` demnad file and editing it to add `flow` with `vehsPerHour` parameter according to [this doc](https://sumo.dlr.de/docs/Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes.html#repeated_vehicles_flows). The resulting file content is shown below. For better readablity the xml schema verification header and the route color property were ommited.
+We will continue with the flows outside of `netedit` by saving `demands.rou.xml` demand file and editing it to add `flow` with `vehsPerHour` parameter according to [this doc](https://sumo.dlr.de/docs/Definition_of_Vehicles%2C_Vehicle_Types%2C_and_Routes.html#repeated_vehicles_flows). The resulting file content is shown below. For better readablity the xml schema verification header and the route color property were ommited.
 ```xml
 <routes>
 <!-- in demands.rou.xml -->
@@ -135,7 +135,7 @@ We can see that for each direction we have a phase with all maneuvers, left turn
 ![](doc/with_sumo_tls.gif)
 
 ### Traffic plan optimization
-Lets try to use one of the SUMO python tools `tlsCycleAdaptation.py` to optimize the phase times accrding to [this doc](https://sumo.dlr.de/docs/Tools/tls.html#tlscycleadaptationpy). Unlike our shorthand demand definitions `flow` and `trip` from [this doc](https://sumo.dlr.de/docs/Demand/Shortest_or_Optimal_Path_Routing.html) the tool description says that it only supports full demand definition of de the type `vehicle`. We will use `duarouter` that performs [Dynamic User Assignment](https://sumo.dlr.de/docs/Demand/Dynamic_User_Assignment.html) to obtain the correct demand format.
+Lets try to use one of the SUMO python tools `tlsCycleAdaptation.py` to optimize the phase times accrding to [this doc](https://sumo.dlr.de/docs/Tools/tls.html#tlscycleadaptationpy). Unlike our shorthand demand definitions `flow` and `trip` from [this doc](https://sumo.dlr.de/docs/Demand/Shortest_or_Optimal_Path_Routing.html) the tool description says that it only supports full demand definition of the type `vehicle`. We will use `duarouter` that performs [Dynamic User Assignment](https://sumo.dlr.de/docs/Demand/Dynamic_User_Assignment.html) to obtain the correct demand format.
 
 ```sh
 duarouter --route-files demands.rou.xml --net-file network.net.xml --output-file vehicle_demands.rou.xml
@@ -272,7 +272,22 @@ python $SUMO_HOME/tools/output/tripStatistics.py -t solution_tripinfo.xml -o sol
 | Average travel time (s)     | 49.7  | 56.5  | **48.1**  |
 | Average travel speed (m/s)  | **3.7**   | 2.6   | 3.6   |
 
-As you see the solution plan without left turns is better in all but average travel speed metric. This is because by default SUMO will always add a left turning phase if the left turning connection exists. This will happen regardless of whether the volume of left turns requires having a dedicated phase. As to the optimization with `tlsCycleAdaptation.py` we simply asked SUMO to improve the phase durations and not the phase sequence, so SUMO was not responsble for suggesting a better phase sequence.
+As you see the solution plan without left turns is better in all but average travel speed metric. This is because by default SUMO will always add a left turning phase if the left turning connection exists. This will happen regardless of whether the volume of left turns requires having a dedicated phase. As to the optimization with `tlsCycleAdaptation.py` we simply asked SUMO to improve the phase durations and not the phase sequence, so SUMO was not responsble for suggesting a better phase sequence. Bear in mind that by on traffic light generation `netedit` actually uses `netconvert` the default parameters as shown in [this doc](https://sumo.dlr.de/docs/netconvert.html#tls_building). This means that once we have a network without traffic lights we can guess them with some parameters. For example, if we wanted to guess a traffic light for `no_tls_network.net.xml` without left turn, we would write the following `netconvert` command:
+
+```xml
+netconvert -s no_tls_network.net.xml --tls.guess --tls.left-green.time -1 -o no_left_network.net.xml
+```
+
+Which will result in the following phase definition:
+
+```xml
+<tlLogic id="C" type="static" programID="0" offset="0">
+    <phase duration="42" state="rrrGGgrrrGGg"/>
+    <phase duration="3"  state="rrryyyrrryyy"/>
+    <phase duration="42" state="GGgrrrGGgrrr"/>
+    <phase duration="3"  state="yyyrrryyyrrr"/>
+</tlLogic>
+```
 
 ## Part 2:
 - Model another similar intersection on the western approach

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- generated on 2021-10-21 11:37:36 by Eclipse SUMO netedit Version 1.10.0
+<!-- generated on 2021-10-21 11:40:33 by Eclipse SUMO netconvert Version 1.10.0
 <configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
 
     <input>
-        <sumo-net-file value="network.net.xml"/>
+        <sumo-net-file value="no_tls_network.net.xml"/>
     </input>
 
     <output>
-        <output-file value="network.net.xml"/>
+        <output-file value="no_left_network.net.xml"/>
     </output>
 
     <processing>
@@ -17,6 +17,11 @@
         <offset.disable-normalization value="true"/>
         <lefthand value="false"/>
     </processing>
+
+    <tls_building>
+        <tls.guess value="true"/>
+        <tls.left-green.time value="-1"/>
+    </tls_building>
 
     <junctions>
         <no-turnarounds value="true"/>
@@ -169,14 +174,10 @@
     </edge>
 
     <tlLogic id="C" type="static" programID="0" offset="0">
-        <phase duration="33" state="rrrGGgrrrGGg"/>
-        <phase duration="3"  state="rrryygrrryyg"/>
-        <phase duration="6"  state="rrrrrGrrrrrG"/>
-        <phase duration="3"  state="rrrrryrrrrry"/>
-        <phase duration="33" state="GGgrrrGGgrrr"/>
-        <phase duration="3"  state="yygrrryygrrr"/>
-        <phase duration="6"  state="rrGrrrrrGrrr"/>
-        <phase duration="3"  state="rryrrrrryrrr"/>
+        <phase duration="42" state="rrrGGgrrrGGg"/>
+        <phase duration="3"  state="rrryyyrrryyy"/>
+        <phase duration="42" state="GGgrrrGGgrrr"/>
+        <phase duration="3"  state="yyyrrryyyrrr"/>
     </tlLogic>
 
     <junction id="A1" type="dead_end" x="119.79" y="55.80" incLanes="toA1_0" intLanes="" shape="119.79,55.80 118.32,65.69 121.06,49.17"/>

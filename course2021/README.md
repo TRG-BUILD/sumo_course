@@ -13,6 +13,7 @@ Expected load for every lecture:
 
 
 ### Part 1: SUMO basics
+Slides TT4
 - Introduction to microsimulation
 - Network building and editing
 - Definition of routes, road users and simulation outputs
@@ -24,6 +25,7 @@ Expected load for every lecture:
 
 
 ### Part 2: SUMO signalized intersections
+Slides TT7
 - Pre-timed control and coordination
 - Traffic responsive control
 
@@ -33,6 +35,7 @@ Expected load for every lecture:
 
 
 ### Part 3: SUMO tools and advanced features
+Slides TT10
 - Traffic Control Interface (TraCI)
 
 ### Part 4: Extras on student requested topics

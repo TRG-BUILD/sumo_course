@@ -13,31 +13,27 @@ Expected load for every lecture:
 
 
 ### Part 1: SUMO basics
-    Introduction to microsimulation
-    Network building and editing
-    Definition of routes, road users and simulation outputs
+- Introduction to microsimulation
+- Network building and editing
+- Definition of routes, road users and simulation outputs
 
 
 ### Part 2: preparation
-
-    Go through the solutions to exercise 1 and exercise 2 and prepare questions if something was unclear.
-    Read SUMO docs about traffic light definition
-
-
-Kursusgang 7 - SUMO signalized intersections
-
-    Tidsstyret signalanlæg og samordning
-    Trafikstyret signalanlæg
+- Go through the solutions to [exercise 1](https://github.com/TRG-BUILD/sumo_course/tree/master/course2021/part1_networks_and_demands/exercise1) and [exercise 2](https://github.com/TRG-BUILD/sumo_course/tree/master/course2021/part1_networks_and_demands/exercise2) and prepare questions if something was unclear.
+- Read SUMO docs about [traffic light definition](https://sumo.dlr.de/docs/Simulation/Traffic_Lights.html)
 
 
-Før Kursusgang 10
+### Part 2: SUMO signalized intersections
+- Pre-timed control and coordination
+- Traffic responsive control
 
-    Go through the solutions to exercise 1 and 2 and prepare questions if something was unclear.
-    Get introduced to Traffic Control Interface (TraCI) following the tutorial here
-
-
-Kursusgang 10 - SUMO tools and advanced features
-
-    Traffic Control Interface (TraCI)
+### Part 3: preparation
+- Go through the solutions to [exercise 1 and 2](https://github.com/TRG-BUILD/sumo_course/tree/master/course2021/part2_intersections/exercise1) and prepare questions if something was unclear.
+- Get introduced to Traffic Control Interface (TraCI) following the tutorial [here](https://intelaligent.github.io/tctb/post-learning-traci-tls.html)
 
 
+### Part 3: SUMO tools and advanced features
+- Traffic Control Interface (TraCI)
+
+### Part 4: Extras on student requested topics
+- Traffic Control Interface for intelligent traffic lights

@@ -1,2 +1,2 @@
 # SUMO_AAU
-Notes on Simulation of Urban MObility (SUMO)
+Course on Simulation of Urban MObility (SUMO) at AAU

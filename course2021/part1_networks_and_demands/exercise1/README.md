@@ -231,7 +231,13 @@ In the `crossing` we need to specify which `edges` does the crossing cross, in a
 Lets build the network with `netconvert` and verify that it looks good using `netedit`.
 
 ```sh
-netconvert -n nodes2.nod.xml -e edges2.edg.xml -t types2.type.xml -o network2.net.xml
+netconvert -n nodes2.nod.xml -e edges2.edg.xml -t types2.type.xml -x connections2.con.xml  -o network2.net.xml
+netedit network2.net.xml
+```
+
+Alternatively, if we want to also specify no return connection file:
+```sh
+netconvert -n nodes2.nod.xml -e edges2.edg.xml -t types2.type.xml -x connections.con.xml,connections2.con.xml  -o network2.net.xml
 netedit network2.net.xml
 ```
 

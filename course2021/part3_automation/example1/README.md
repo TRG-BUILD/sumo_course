@@ -9,12 +9,12 @@ sumo-gui -n network.net.xml -r demands.rou.xml
 First of all we need to ensure that `python` knows where to loof ro TraCI. Originally TraCI is installed into `SUMO_HOME/tools` directory, we just need to provide path to it.
 
 ```python
- import os, sys
- if 'SUMO_HOME' in os.environ:
-     tools = os.path.join(os.environ['SUMO_HOME'], 'tools')
-     sys.path.append(tools)
- else:
-     sys.exit("please declare environment variable 'SUMO_HOME'")
+import os, sys
+if 'SUMO_HOME' in os.environ:
+    tools = os.path.join(os.environ['SUMO_HOME'], 'tools')
+    sys.path.append(tools)
+else:
+    sys.exit("please declare environment variable 'SUMO_HOME'")
 ```
 
 When the path is established we can import `traci`

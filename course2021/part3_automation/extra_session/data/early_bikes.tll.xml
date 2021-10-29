@@ -1,0 +1,12 @@
+<additional>
+    <tlLogic id="C" type="static" programID="1" offset="0">
+        <phase duration="5" state="gGrrrrrrrrgGrrrrrrrrrrrr" next="1" name="0_bikes_first" />
+        <phase duration="30" state="gGgGgrrrrrgGgGgrrrrrrGrG" next="2" name="0_main" />
+        <phase duration="5" state="rrrrrgGrrrrrrrrgGrrrrrrr" next="3" name="1_bikes_first" />
+        <phase duration="10" state="rrrrrgGgGgrrrrrgGgGgGrGr" next="0" name="1_main" />
+		<phase duration="3" state="gGrrrrrrrrgGrrrrrrrrrrrr" next="1" name="(0, 1)" />
+		<phase duration="3" state="yyyyyrrrrryyyyyrrrrrrrrr" next="2" name="(1, 2)" />
+		<phase duration="3" state="rrrrrgGrrrrrrrrgGrrrrrrr" next="3" name="(2, 3)" />
+		<phase duration="3" state="rrrrryyyyyrrrrryyyyyrrrr" next="0" name="(3, 0)" />
+	</tlLogic>
+</additional>

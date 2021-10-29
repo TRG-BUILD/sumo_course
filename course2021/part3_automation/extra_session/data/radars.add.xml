@@ -1,0 +1,23 @@
+<additional xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/additional_file.xsd">
+    <laneAreaDetector file="radar_result.det.xml" freq="60" friendlyPos="x" id="e2det_EC_2" lane="EC_2" length="52.3" pos="1.4155343563970746e-15"/>
+    <laneAreaDetector file="radar_result.det.xml" freq="60" friendlyPos="x" id="e2det_EC_3" lane="EC_3" length="52.3" pos="1.4155343563970746e-15"/>
+    <laneAreaDetector file="radar_result.det.xml" freq="60" friendlyPos="x" id="e2det_EC_4" lane="EC_4" length="52.3" pos="1.4155343563970746e-15"/>
+
+    <laneAreaDetector file="radar_result.det.xml" freq="60" friendlyPos="x" id="e2det_NC_2" lane="NC_2" length="49.3" pos="1.4155343563970746e-15"/>
+    <laneAreaDetector file="radar_result.det.xml" freq="60" friendlyPos="x" id="e2det_NC_3" lane="NC_3" length="49.3" pos="1.4155343563970746e-15"/>
+    <laneAreaDetector file="radar_result.det.xml" freq="60" friendlyPos="x" id="e2det_NC_4" lane="NC_4" length="49.3" pos="1.4155343563970746e-15"/>
+
+    <laneAreaDetector file="radar_result.det.xml" freq="60" friendlyPos="x" id="e2det_SC_2" lane="SC_2" length="52.3" pos="1.4155343563970746e-15"/>
+    <laneAreaDetector file="radar_result.det.xml" freq="60" friendlyPos="x" id="e2det_SC_3" lane="SC_3" length="52.3" pos="1.4155343563970746e-15"/>
+    <laneAreaDetector file="radar_result.det.xml" freq="60" friendlyPos="x" id="e2det_SC_4" lane="SC_4" length="52.3" pos="1.4155343563970746e-15"/>
+
+    <laneAreaDetector file="radar_result.det.xml" freq="60" friendlyPos="x" id="e2det_WC_2" lane="WC_2" length="49.3" pos="1.4155343563970746e-15"/>
+    <laneAreaDetector file="radar_result.det.xml" freq="60" friendlyPos="x" id="e2det_WC_3" lane="WC_3" length="49.3" pos="1.4155343563970746e-15"/>
+    <laneAreaDetector file="radar_result.det.xml" freq="60" friendlyPos="x" id="e2det_WC_4" lane="WC_4" length="49.3" pos="1.4155343563970746e-15"/>
+
+    <laneAreaDetector file="radar_result.det.xml" freq="60" friendlyPos="x" id="e2det_CN_2" lane="CN_2" length="49.3" pos="1.4155343563970746e-15"/>
+    <laneAreaDetector file="radar_result.det.xml" freq="60" friendlyPos="x" id="e2det_CE_2" lane="CE_2" length="49.3" pos="1.4155343563970746e-15"/>
+    <laneAreaDetector file="radar_result.det.xml" freq="60" friendlyPos="x" id="e2det_CS_2" lane="CS_2" length="49.3" pos="1.4155343563970746e-15"/>
+    <laneAreaDetector file="radar_result.det.xml" freq="60" friendlyPos="x" id="e2det_CW_2" lane="CW_2" length="49.3" pos="1.4155343563970746e-15"/>
+</additional>
+

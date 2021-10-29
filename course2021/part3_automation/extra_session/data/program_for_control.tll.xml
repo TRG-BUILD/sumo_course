@@ -1,9 +1,9 @@
 <additionals>
     <tlLogic id="C" type="static" programID="1" offset="0">
-        <phase duration="28" state="gGgGgrrrrrgGgGgrrrrrrGrG" next="4"/>
-        <phase duration="6"  state="rrrrGrrrrrrrrrGrrrrrrrrr" next="5"/>
-        <phase duration="28" state="rrrrrgGgGgrrrrrgGgGgGrGr" next="6"/>
-        <phase duration="6"  state="rrrrrrrrrGrrrrrrrrrGrrrr" next="7"/>
+        <phase duration="100" state="gGgGgrrrrrgGgGgrrrrrrGrG" next="4"/>
+        <phase duration="100"  state="rrrrGrrrrrrrrrGrrrrrrrrr" next="5"/>
+        <phase duration="100" state="rrrrrgGgGgrrrrrgGgGgGrGr" next="6"/>
+        <phase duration="100"  state="rrrrrrrrrGrrrrrrrrrGrrrr" next="7"/>
 
         <phase duration="3"  state="yyyyyyyyyyyyyyyyyyyyyyyy" next="1"/>
         <phase duration="3"  state="yyyyyyyyyyyyyyyyyyyyyyyy" next="2"/>

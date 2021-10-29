@@ -98,15 +98,17 @@ while traci.simulation.getMinExpectedNumber() > 0:
     if any(pressures.values()):
         max_pressure_phase = max(pressures, key=pressures.get)
 
-    if phase > n_phases:
+    if phase >= n_phases:
         print("time: {}, status: transition phase {}, pressures: {}, max pressure phase: {}".format(
             time, phase, pressures, max_pressure_phase))
+        time += 1
         continue
 
     if phase_timers[phase] < min_green:
         phase_timers[phase] += 1
         print("time: {}, status: min_green, current phase: {}, pressures: {}, max pressure phase: {}".format(
             time, phase, pressures, max_pressure_phase))
+        time += 1
         continue
 
     # calulate phase switch
@@ -120,10 +122,10 @@ while traci.simulation.getMinExpectedNumber() > 0:
         phase_timers[phase] + 1
         print("time: {}, status: extend phase, current phase: {}, pressures: {}, max pressure phase: {}".format(
             time, phase, pressures, max_pressure_phase))
-        
+    time += 1    
     ###
 
-    time += 1
+    
 
 # disconnect
 traci.close()

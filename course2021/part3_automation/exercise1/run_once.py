@@ -10,7 +10,7 @@ import traci
 
 # compose the SUMO simulation command
 sumo_command = [
-    "sumo-gui",
+    "sumo",
     "-n", "data/cross.net.xml",
     "-a", "data/radars.add.xml,data/early_bikes.tll.xml",
     "-r", "data/vehicles.rou.xml,data/cyclists.rou.xml,data/pedestrians.rou.xml"
